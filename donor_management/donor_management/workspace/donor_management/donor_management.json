@@ -1,0 +1,232 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"nAUGKLMVL2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Donor Management</span>\",\"col\":12}},{\"id\":\"g_bvrpemvq\",\"type\":\"card\",\"data\":{\"card_name\":\"Lead and Agent Details\",\"col\":4}},{\"id\":\"y9Z6RqpCZx\",\"type\":\"card\",\"data\":{\"card_name\":\"Donor Details\",\"col\":4}},{\"id\":\"NaxtPTkVQq\",\"type\":\"card\",\"data\":{\"card_name\":\"Donation Details\",\"col\":4}},{\"id\":\"EXY1nJWdtO\",\"type\":\"card\",\"data\":{\"card_name\":\"Utilisation Details\",\"col\":4}},{\"id\":\"qsQUcHX50h\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":4}},{\"id\":\"wXdHRi7QeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Email Campaign\",\"col\":4}},{\"id\":\"Q-A8k6eJIk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Data Insights</b></span>\",\"col\":12}},{\"id\":\"1FYVr7z5jW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead Dashboard\",\"col\":3}},{\"id\":\"fS8d6OXNK9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donor Dashboard\",\"col\":3}},{\"id\":\"K6BajaBt0i\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Dashboard\",\"col\":3}},{\"id\":\"nLoJlyf6YP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Dashboard\",\"col\":3}}]",
+ "creation": "2024-02-19 15:51:49.184106",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Donor Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Utilisation Details",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Utilisation",
+   "link_count": 0,
+   "link_to": "Utilisation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lead and Agent Details",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leads",
+   "link_count": 0,
+   "link_to": "Leads",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Agent",
+   "link_count": 0,
+   "link_to": "Agent",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Campaign",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Campaign",
+   "link_count": 0,
+   "link_to": "Campaign",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Campaign",
+   "link_count": 0,
+   "link_to": "Email Campaign",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Account",
+   "link_count": 0,
+   "link_to": "Email Account",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Donation Details",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Donation",
+   "link_count": 0,
+   "link_to": "Donation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Overall Donation",
+   "link_count": 0,
+   "link_to": "Overall Donation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Report",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Utilisation Report",
+   "link_count": 0,
+   "link_to": "Utilisation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Donation Report",
+   "link_count": 0,
+   "link_to": "Donation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Overall Donation Report",
+   "link_count": 0,
+   "link_to": "Overall Donation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Donor Details",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Donor",
+   "link_count": 0,
+   "link_to": "Donor",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-04-17 13:40:44.430583",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Donor Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Donation Dashboard",
+   "link_to": "Donation Dashboard",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lead Dashboard",
+   "link_to": "Lead Dashboard",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Donor Dashboard",
+   "link_to": "Donor Dashboard",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Utilisation Dashboard",
+   "link_to": "Utilisation Dashboard",
+   "type": "Dashboard"
+  }
+ ],
+ "title": "Donor Management"
+}

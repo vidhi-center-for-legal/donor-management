@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-02-19 13:46:04.809985",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "donor_details_section",
+  "naming_series",
+  "donor_name",
+  "gender",
+  "dob",
+  "organisation_name",
+  "address",
+  "column_break_uhko",
+  "email",
+  "phone",
+  "alternative_number",
+  "designation",
+  "preferred_communication_method",
+  "donor_type",
+  "tax_identification_number",
+  "pan_card",
+  "aadhar_number",
+  "presentation_given",
+  "departments",
+  "presentation_details_section",
+  "presentation_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "donor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Donor Details"
+  },
+  {
+   "fieldname": "donor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Donor Name"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther"
+  },
+  {
+   "fieldname": "organisation_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Organisation Name"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_uhko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "alternative_number",
+   "fieldtype": "Data",
+   "label": "Alternative Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "preferred_communication_method",
+   "fieldtype": "Select",
+   "label": " Preferred Communication Method",
+   "options": "\nEmail\nPhone\nIn Person\nNone"
+  },
+  {
+   "fieldname": "donor_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Donor Type",
+   "options": "Donor Type"
+  },
+  {
+   "depends_on": "eval: doc.donor_type == \"Foriegn Donor\"",
+   "fieldname": "tax_identification_number",
+   "fieldtype": "Data",
+   "label": "Tax Identification Number"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Data",
+   "label": "Pan Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "aadhar_number",
+   "fieldtype": "Data",
+   "label": "Aadhar Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "presentation_given",
+   "fieldtype": "Check",
+   "label": "Presentation Given"
+  },
+  {
+   "depends_on": "eval: doc.presentation_given == true",
+   "fieldname": "presentation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Agreement and Compliances"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Donor ID",
+   "options": "DONOR-.YYYY.-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "departments",
+   "fieldtype": "Table MultiSelect",
+   "in_filter": 1,
+   "in_standard_filter": 1,
+   "label": "Verticals",
+   "options": "Departments"
+  },
+  {
+   "fieldname": "presentation_details",
+   "fieldtype": "Table",
+   "label": "Presentation Details",
+   "options": "Attachments"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Donation",
+   "link_fieldname": "donor_id"
+  },
+  {
+   "link_doctype": "Utilisation",
+   "link_fieldname": "donor_id"
+  },
+  {
+   "link_doctype": "Overall Donation",
+   "link_fieldname": "donor_id"
+  }
+ ],
+ "modified": "2024-05-06 16:40:37.840701",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Donor",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "donor_name",
+ "track_changes": 1
+}

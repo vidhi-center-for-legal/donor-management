@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:donor_name",
+ "creation": "2024-04-04 17:25:05.251872",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "donation_details_section",
+  "donor_id",
+  "donor_name",
+  "donor_type",
+  "latest_donation_date",
+  "column_break_xgsj",
+  "total_donation",
+  "total_utilisation",
+  "available_donation_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "donor_id",
+   "fieldtype": "Link",
+   "label": "Donor ID",
+   "options": "Donor"
+  },
+  {
+   "fieldname": "donation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Donation Details"
+  },
+  {
+   "fetch_from": "donor_id.donor_type",
+   "fieldname": "donor_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Donor Type"
+  },
+  {
+   "fieldname": "total_donation",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Donation"
+  },
+  {
+   "fetch_from": "donor_id.donor_name",
+   "fieldname": "donor_name",
+   "fieldtype": "Data",
+   "label": "Donor Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_xgsj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_utilisation",
+   "fieldtype": "Currency",
+   "label": "Total Utilisation"
+  },
+  {
+   "fieldname": "available_donation_amount",
+   "fieldtype": "Currency",
+   "label": "Available Donation Amount"
+  },
+  {
+   "fieldname": "latest_donation_date",
+   "fieldtype": "Date",
+   "label": "Latest Donation Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-08 15:13:30.513222",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Overall Donation",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "donor_name"
+}

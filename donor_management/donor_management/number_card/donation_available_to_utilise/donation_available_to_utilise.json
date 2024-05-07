@@ -1,0 +1,23 @@
+{
+ "creation": "2024-02-19 15:59:44.360443",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"donor\":\"\",\"range\":\"Monthly\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Donation Available to Utilise",
+ "modified": "2024-02-19 16:50:19.508540",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Donation Available to Utilise",
+ "owner": "Administrator",
+ "report_field": "remaining_amount",
+ "report_function": "Sum",
+ "report_name": "Donation Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

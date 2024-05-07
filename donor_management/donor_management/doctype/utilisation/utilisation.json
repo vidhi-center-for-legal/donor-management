@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-02-19 13:57:36.343881",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_odke",
+  "donor_id",
+  "donor_name",
+  "donation_amount",
+  "left_over_donation",
+  "utilisation_amount",
+  "column_break_fqvm",
+  "naming_series",
+  "utilisation_document",
+  "utilisation_type",
+  "progress_report",
+  "departments",
+  "approval_section",
+  "date_of_utilisation",
+  "utilisation_status",
+  "column_break_grpv",
+  "approved_by",
+  "approved_date",
+  "description_section",
+  "utilisation_purpose",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_odke",
+   "fieldtype": "Section Break",
+   "label": "Utilisation Details"
+  },
+  {
+   "fetch_from": "donor_id.donor_name",
+   "fieldname": "donor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Donor Name"
+  },
+  {
+   "fetch_from": "donor_id.total_donation",
+   "fieldname": "donation_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Donation Amount"
+  },
+  {
+   "fieldname": "utilisation_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Utilisation Amount"
+  },
+  {
+   "fieldname": "column_break_fqvm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "DON-UTIL-"
+  },
+  {
+   "fieldname": "utilisation_document",
+   "fieldtype": "Attach",
+   "label": "Utilisation Document"
+  },
+  {
+   "fieldname": "utilisation_type",
+   "fieldtype": "Link",
+   "label": "Utilisation Type",
+   "options": "Utilisation Type"
+  },
+  {
+   "fetch_from": "donor_id.available_donation_amount",
+   "fieldname": "left_over_donation",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Available Donation Amount"
+  },
+  {
+   "fieldname": "approval_section",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "fieldname": "date_of_utilisation",
+   "fieldtype": "Date",
+   "label": "Date of Utilisation"
+  },
+  {
+   "fieldname": "utilisation_status",
+   "fieldtype": "Select",
+   "label": "Utilisation Status",
+   "options": "\nPending\nApproved\nRejected\nCompleted"
+  },
+  {
+   "fieldname": "column_break_grpv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Approved by"
+  },
+  {
+   "fieldname": "approved_date",
+   "fieldtype": "Date",
+   "label": "Approved date"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "utilisation_purpose",
+   "fieldtype": "Text",
+   "label": "Purpose of Utilisation"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Utilisation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "donor_id",
+   "fieldtype": "Link",
+   "label": "Donor ID",
+   "options": "Overall Donation"
+  },
+  {
+   "fieldname": "progress_report",
+   "fieldtype": "Data",
+   "label": "Progress Report"
+  },
+  {
+   "fieldname": "departments",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vertical",
+   "options": "Department Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-04-16 11:35:52.717812",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Utilisation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

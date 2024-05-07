@@ -1,0 +1,20 @@
+[project]
+name = "donor_management"
+authors = [
+    { name = "Tech4Good Community", email = "hello@tech4goodcommunity.com"}
+]
+description = "This is a generic version of donor management. It includes Leads creation, Agent handling the lead, Donor, donation and utilisation details."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=15.0.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# These dependencies are only installed when developer mode is enabled
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"

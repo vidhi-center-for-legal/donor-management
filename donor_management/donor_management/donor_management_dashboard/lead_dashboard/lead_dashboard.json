@@ -1,0 +1,28 @@
+{
+ "cards": [
+  {
+   "card": "Leads Converted to Donor"
+  },
+  {
+   "card": "Total Potential Funders"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Leads by Lead status",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-04-08 12:39:50.312895",
+ "dashboard_name": "Lead Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-04-17 15:28:43.895520",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Lead Dashboard",
+ "owner": "Administrator"
+}

@@ -1,0 +1,25 @@
+{
+ "cards": [
+  {
+   "card": "Total Donors"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Count of Donors based on Donor type",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-04-08 12:40:48.722557",
+ "dashboard_name": "Donor Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-04-16 11:48:51.712070",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Donor Dashboard",
+ "owner": "Administrator"
+}

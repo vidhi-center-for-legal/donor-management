@@ -1,0 +1,250 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-02-19 13:53:41.613389",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "donor_details_section",
+  "naming_series",
+  "donor_id",
+  "donor_name",
+  "donor_type",
+  "organisation",
+  "column_break_arme",
+  "designation",
+  "email",
+  "engagement_start_date",
+  "engagement_end_date",
+  "tranche_details_section",
+  "tranche_name",
+  "date_of_donation",
+  "preferred_currency",
+  "amount_in_preferred_currency",
+  "exchange_rate",
+  "tranche_amount",
+  "column_break_swjj",
+  "foriegn_donation",
+  "left_over_donation",
+  "mode_of_payment",
+  "pan_card",
+  "donation_status",
+  "amended_from",
+  "paid",
+  "receipt_details_section",
+  "receipt_sent_date",
+  "column_break_saby",
+  "receipt_generated"
+ ],
+ "fields": [
+  {
+   "fieldname": "donor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Donor Details"
+  },
+  {
+   "fetch_from": "donor_id.organisation_name",
+   "fieldname": "organisation",
+   "fieldtype": "Data",
+   "label": "Organisation"
+  },
+  {
+   "fieldname": "date_of_donation",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Tranch Date as per agreement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_arme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "donor_id.donor_type",
+   "fieldname": "donor_type",
+   "fieldtype": "Data",
+   "label": "Donor Type"
+  },
+  {
+   "fetch_from": "donor_id.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "donor_id.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "tranche_details_section",
+   "fieldtype": "Section Break",
+   "label": "Tranche details"
+  },
+  {
+   "fieldname": "tranche_name",
+   "fieldtype": "Data",
+   "label": "Tranche Name"
+  },
+  {
+   "depends_on": "eval:doc.foriegn_donation == true;",
+   "fieldname": "preferred_currency",
+   "fieldtype": "Link",
+   "label": "Preferred Currency",
+   "options": "Currency"
+  },
+  {
+   "depends_on": "eval:doc.foriegn_donation == true;",
+   "fieldname": "amount_in_preferred_currency",
+   "fieldtype": "Int",
+   "label": "Amount in Preferred Currency"
+  },
+  {
+   "fieldname": "tranche_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Tranche Amount",
+   "precision": "0"
+  },
+  {
+   "fieldname": "donation_status",
+   "fieldtype": "Select",
+   "label": "Donation Status",
+   "options": "\nAvailable to Utilise\nExhausted"
+  },
+  {
+   "fieldname": "column_break_swjj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "foriegn_donation",
+   "fieldtype": "Check",
+   "label": "Foriegn Donation"
+  },
+  {
+   "fetch_from": "amended_from.tranche_amount",
+   "fetch_if_empty": 1,
+   "fieldname": "left_over_donation",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Left over donation"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Link",
+   "label": "Mode of Payment",
+   "options": "Mode of Payment"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Donation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid"
+  },
+  {
+   "fieldname": "donor_id",
+   "fieldtype": "Link",
+   "label": "Donor ID",
+   "options": "Donor"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Donation ID",
+   "options": "Donation-.YYYY.-",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "donor_id.donor_name",
+   "fieldname": "donor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Donor Name"
+  },
+  {
+   "fieldname": "engagement_start_date",
+   "fieldtype": "Date",
+   "label": "Engagement Start date"
+  },
+  {
+   "fieldname": "engagement_end_date",
+   "fieldtype": "Date",
+   "label": "Engagement End date"
+  },
+  {
+   "fieldname": "receipt_details_section",
+   "fieldtype": "Section Break",
+   "label": "Receipt Details"
+  },
+  {
+   "fieldname": "receipt_sent_date",
+   "fieldtype": "Date",
+   "label": "Receipt Sent Date"
+  },
+  {
+   "fieldname": "column_break_saby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "receipt_generated",
+   "fieldtype": "Select",
+   "label": "Receipt Generated",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.foriegn_donation == true;",
+   "fieldname": "exchange_rate",
+   "fieldtype": "Currency",
+   "label": "Exchange rate"
+  },
+  {
+   "fetch_from": "donor_id.pan_card",
+   "fieldname": "pan_card",
+   "fieldtype": "Data",
+   "label": "Pan Card"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-05-06 16:12:29.583961",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Donation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "donor_name"
+}

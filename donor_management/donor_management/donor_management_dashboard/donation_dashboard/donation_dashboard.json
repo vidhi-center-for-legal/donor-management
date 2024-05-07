@@ -1,0 +1,46 @@
+{
+ "cards": [
+  {
+   "card": "Total Number of Tranches Recieved"
+  },
+  {
+   "card": "Total Donation Value"
+  },
+  {
+   "card": "Count of Foriegn Donations"
+  },
+  {
+   "card": "Total Donation Value Available to Utilise"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Total Donation by Donor",
+   "width": "Full"
+  },
+  {
+   "chart": "No. of Tranches by Each Donor",
+   "width": "Full"
+  },
+  {
+   "chart": "No. of Tranches based on Different Currencies",
+   "width": "Half"
+  },
+  {
+   "chart": "Donation Value Received through Different Mode of Payment",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-04-08 12:40:31.007659",
+ "dashboard_name": "Donation Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-04-17 15:22:44.224398",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Donation Dashboard",
+ "owner": "Administrator"
+}

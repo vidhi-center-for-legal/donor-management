@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-02-19 14:00:32.427062",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "agent_details_section",
+  "agent_name",
+  "email",
+  "phone",
+  "agent_for_lead_transfer",
+  "column_break_nycj",
+  "agent_status",
+  "salutation",
+  "date_of_joining",
+  "department",
+  "naming_series",
+  "address_and_other_details_section",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent_details_section",
+   "fieldtype": "Section Break",
+   "label": "Agent Details"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agent Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "agent_for_lead_transfer",
+   "fieldtype": "Link",
+   "label": "Agent for lead transfer",
+   "options": "Agent"
+  },
+  {
+   "fieldname": "column_break_nycj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "agent_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agent Status",
+   "options": "\nActive\nInactive\nLeft"
+  },
+  {
+   "fieldname": "salutation",
+   "fieldtype": "Select",
+   "label": "Salutation",
+   "options": "Mr\nMs\nDr\nNone"
+  },
+  {
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "\nShiksha\nVyaapar\nCentral"
+  },
+  {
+   "fieldname": "address_and_other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Address and other details"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Long Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Agent Series",
+   "options": "AGENT -",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-15 11:03:07.254716",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Agent",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
