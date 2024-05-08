@@ -1,13 +1,8 @@
 import frappe
-import jwt
-import datetime
 @frappe.whitelist(allow_guest=True)
 
-
-def ping():
+def update_donor_donation_details(data):
     try:
-        data = get_request_form_data()
-        #print(data)
         update_donor_details(data)
         return {
             "success": "True"
@@ -32,24 +27,20 @@ def create_donor_donation(donor, data):
     donor.phone = data.phone
     donor.address = data.address
     donor.email = data.email
-    
     donor.save(ignore_permissions=True)
-    
-    donation = frappe.new_doc("Donation", filters = {"donor_name": donor.donor_name})
-    donation.donor_id = donor.donor_id
-    donation.date_of_donation = data.date_of_donation
-    donation.tranche_amount = data.donation_amount
-    
-    donation.save(ignore_permissions = True)
-    
-    
-def get_request_form_data():
-	if frappe.form_dict.data is None:
-		data = frappe.safe_decode(frappe.request.get_data())
-	else:
-		data = frappe.form_dict.data
+    create_donation(data, donor)
 
-	try:
-		return frappe.parse_json(data)
-	except ValueError:
-		return frappe.form_dict
+def create_donation(data, donor):
+    print(data)
+    print(donor)
+    donation = frappe.new_doc("Donation")
+    donation.update({
+        "doctype": "Donation",
+        "donor_id": donor.name,
+        "date_of_donation": data['date_of_donation'],
+        "tranche_amount": data['donation_amount']
+    })
+
+    donation.insert(ignore_permissions=True)
+
+    

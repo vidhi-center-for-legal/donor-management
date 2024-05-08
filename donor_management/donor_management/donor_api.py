@@ -3,13 +3,13 @@ import frappe
 from frappe import _
 import jwt, re
 import datetime
-from flask import request
+from donor_management.donor_management.api import update_donor_donation_details 
 
-SECRET_KEY = ""  # Todo @ajith please fill this will Secret key
+SECRET_KEY = "E4BFC2532EDDEF9857DCEE8E8DD1F"  # Todo @ajith please fill this will Secret key
 api_username = "udhyam"
 api_password = "password123"
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist(allow_guest=True, methods= ['GET'])
 def get_token_api():
     try:
         data = frappe.parse_json(frappe.safe_decode(frappe.request.get_data()))
@@ -30,7 +30,7 @@ def get_token_api():
 def generate_token(username):
     payload = {
         'sub': username,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=1)
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=10)
     }
     return jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
@@ -48,7 +48,6 @@ def verify_token(token):
 
 def validate_non_blank_field(data):
     for key, value in data.items():
-        # print(f"{key}:{value}")
         if not value or value.strip() == "":
             return {
                 "error": f"{key} is mandatory"
@@ -62,18 +61,7 @@ def validate_email(email):
 
 
 def validate_phone(phone):
-    """
-    Validates if a phone number has exactly 10 digits.
-
-    Args:
-        phone (str): The phone number to validate.
-
-    Returns:
-        bool: True if the phone number has 10 digits, False otherwise.
-    """
-    # Remove any non-digit characters (e.g., spaces, hyphens)
     cleaned_phone = "".join(filter(str.isdigit, phone))
-
     return len(cleaned_phone) == 10
 
 
@@ -85,12 +73,11 @@ def validate_date_format(date_str):
         return False
 
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist(allow_guest=True, methods=['POST'])
 def send_donation_data():
     if "Token" in frappe.request.headers:
         token = frappe.request.headers['Token']
         response = verify_token(token)
-        print(response)
         if response == api_username:
             try:
                 data = frappe.parse_json(frappe.safe_decode(frappe.request.get_data()))
@@ -133,6 +120,6 @@ def donation_record_validation(data):
 
     response = validate_non_blank_field(data)
     if isinstance(response, bool):
-        return frr(data)  # frappe function
+        return update_donor_donation_details(data) 
     elif isinstance(response, dict):
         return response

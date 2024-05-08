@@ -9,19 +9,21 @@
   "donation_details_section",
   "donor_id",
   "donor_name",
+  "donor_email",
   "donor_type",
-  "latest_donation_date",
   "column_break_xgsj",
   "total_donation",
   "total_utilisation",
-  "available_donation_amount"
+  "available_donation_amount",
+  "latest_donation_date"
  ],
  "fields": [
   {
    "fieldname": "donor_id",
    "fieldtype": "Link",
    "label": "Donor ID",
-   "options": "Donor"
+   "options": "Donor",
+   "unique": 1
   },
   {
    "fieldname": "donation_details_section",
@@ -42,7 +44,6 @@
    "label": "Total Donation"
   },
   {
-   "fetch_from": "donor_id.donor_name",
    "fieldname": "donor_name",
    "fieldtype": "Data",
    "label": "Donor Name",
@@ -66,11 +67,18 @@
    "fieldname": "latest_donation_date",
    "fieldtype": "Date",
    "label": "Latest Donation Date"
+  },
+  {
+   "fieldname": "donor_email",
+   "fieldtype": "Data",
+   "label": "Donor Email",
+   "options": "Email",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-08 15:13:30.513222",
+ "modified": "2024-05-08 15:59:58.781541",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Overall Donation",

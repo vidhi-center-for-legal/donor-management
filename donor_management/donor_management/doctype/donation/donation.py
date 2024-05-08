@@ -4,7 +4,7 @@ from erpnext.setup.utils import get_exchange_rate
 
 class Donation(Document):
     def on_submit(self):
-        add_donation_to_test(self)
+        add_donation_to_overall_donation(self)
         left_over_donation_amount(self)
 
 def left_over_donation_amount(doc):
@@ -25,13 +25,13 @@ def exchange_rate(preferred_currency, amount_in_preferred_currency, date_of_dona
         return {"status": "error", "message": f"Error: {str(e)}"}
     
 @frappe.whitelist()
-def add_donation_to_test(doc):
+def add_donation_to_overall_donation(doc):
     try:
         donation_details = frappe.get_doc(doc)
         donor_id = donation_details.get("donor_id")
-
-        overall_donation_document = frappe.get_all('Overall Donation', filters={'donor_id': donor_id}, limit=1)
-
+        donor_email = donation_details.get("email")
+        print(donation_details)
+        overall_donation_document = frappe.get_all('Overall Donation', filters={'donor_id': donor_id, 'donor_email': donor_email }, limit=1)
         if not overall_donation_document:
             add_new_overall_donation(donation_details)
         else:
@@ -45,6 +45,7 @@ def add_new_overall_donation(doc):
     try:
         new_overall_donation_document = frappe.new_doc("Overall Donation")
         new_overall_donation_document.donor_id = doc.get("donor_id")
+        new_overall_donation_document.donor_email = doc.get("email")
         new_overall_donation_document.donor_name = doc.get("donor_name")
         new_overall_donation_document.total_donation= doc.get("tranche_amount")
         new_overall_donation_document.available_donation_amount = doc.get("tranche_amount")
