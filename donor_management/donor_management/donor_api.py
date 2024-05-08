@@ -5,9 +5,14 @@ import jwt, re
 import datetime
 from donor_management.donor_management.api import update_donor_donation_details 
 
-SECRET_KEY = "E4BFC2532EDDEF9857DCEE8E8DD1F"  # Todo @ajith please fill this will Secret key
-api_username = "udhyam"
-api_password = "password123"
+
+
+def get_api_settings(field):
+    sql_query = "SELECT value FROM `tabSingles`    WHERE doctype = 'Udhyam Website API Setting' AND field IN ('"+field+"')"
+    response =  frappe.db.sql(sql_query, as_dict=True)
+    return response[0]["value"]
+    
+
 
 @frappe.whitelist(allow_guest=True, methods= ['GET'])
 def get_token_api():
@@ -15,7 +20,7 @@ def get_token_api():
         data = frappe.parse_json(frappe.safe_decode(frappe.request.get_data()))
         username = data.username
         password = data.password
-        if username == api_username and password == api_password:
+        if username == get_api_settings("username") and password == get_api_settings("password"):
             token = generate_token(username)
             return {'token': token}
         else:
@@ -28,17 +33,18 @@ def get_token_api():
 
 # Generate a JWT token for the given user default token validity is 10 minutes
 def generate_token(username):
+    time = int(get_api_settings("token_expiry_time_mins"))
     payload = {
         'sub': username,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=10)
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=time)
     }
-    return jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+    return jwt.encode(payload, get_api_settings("secret_key"), algorithm='HS256')
 
 
 # Verify the JWT token
 def verify_token(token):
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        payload = jwt.decode(token, get_api_settings("secret_key"), algorithms=['HS256'])
         return payload['sub']
     except jwt.ExpiredSignatureError:
         return 'Token has expired'
@@ -78,7 +84,7 @@ def send_donation_data():
     if "Token" in frappe.request.headers:
         token = frappe.request.headers['Token']
         response = verify_token(token)
-        if response == api_username:
+        if response == get_api_settings("username"):
             try:
                 data = frappe.parse_json(frappe.safe_decode(frappe.request.get_data()))
                 return donation_record_validation(data)

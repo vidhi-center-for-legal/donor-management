@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:donor_name",
+ "autoname": "field:donor_id",
  "creation": "2024-04-04 17:25:05.251872",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -46,8 +46,7 @@
   {
    "fieldname": "donor_name",
    "fieldtype": "Data",
-   "label": "Donor Name",
-   "unique": 1
+   "label": "Donor Name"
   },
   {
    "fieldname": "column_break_xgsj",
@@ -78,7 +77,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-08 15:59:58.781541",
+ "modified": "2024-05-08 16:05:41.631387",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Overall Donation",
