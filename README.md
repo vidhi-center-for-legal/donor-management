@@ -67,3 +67,23 @@ Installing Frappe Framework: Frappe Version 16
 # Installation on Frappe Cloud:
 - checkout the following video for the reference to install apps on frappe cloud https://youtu.be/GeEiskWLf2k?si=b533oUm4oWk92kTa
 
+# API Details 
+- API 1: To generate Token for authentication
+    - Method: GET
+    - End Point: https://<DNS>/api/method/donor_management.donor_management.donor_api.get_token_api
+- API 2: To send the donor and donation details to donor management app
+    - Method: POST
+    - End Point: https://<DNS>/api/method/donor_management.donor_management.donor_api.send_donation_data
+- Before Using the APIs, the system manager must add : 
+    1. username
+    2. password
+    3. time period for token expiration
+    4. Secret key 
+- After Adding these records, The system manager will save the document.
+- Sample data: 
+    - username: udhyam
+    - password: password123
+    - Token Expiry Time (mins): 10
+    - Secret Key: 71D59859F81E74569FE95B5C64C4B
+- Postman Collection Link:
+    - https://api.postman.com/collections/27116056-5269c52c-f2ea-4b02-b5bf-d8cad56fc731?access_key=PMAT-01HXE0CRSC7733K5911ZSF2T7B

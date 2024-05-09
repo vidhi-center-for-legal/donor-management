@@ -1,17 +1,18 @@
 import frappe
 @frappe.whitelist(allow_guest=True)
-def ping():
+
+def update_donor_donation_details(data):
     try:
-        data = get_request_form_data()
-        #print(data)
         update_donor_details(data)
         return {
-            "success": "True"
+            "success": "Data Imported Successfully and Saved as Draft."
         }
     except Exception as e:
-        frappe.log_error(str(e))
+        frappe.log_error("Donor API request Failed :"+ str(e))
         
-        return str(e)
+        return {
+            "Error" : "Something went wrong!"
+        }
 
 def update_donor_details(data):
     existing_donor = frappe.get_all("Donor", filters={"donor_name": data['donor_name'], "email": data['email']})
@@ -28,24 +29,18 @@ def create_donor_donation(donor, data):
     donor.phone = data.phone
     donor.address = data.address
     donor.email = data.email
-    
     donor.save(ignore_permissions=True)
-    
-    donation = frappe.new_doc("Donation", filters = {"donor_name": donor.donor_name})
-    donation.donor_id = donor.donor_id
-    donation.date_of_donation = data.date_of_donation
-    donation.tranche_amount = data.donation_amount
-    
-    donation.save(ignore_permissions = True)
-    
-    
-def get_request_form_data():
-	if frappe.form_dict.data is None:
-		data = frappe.safe_decode(frappe.request.get_data())
-	else:
-		data = frappe.form_dict.data
+    create_donation(data, donor)
 
-	try:
-		return frappe.parse_json(data)
-	except ValueError:
-		return frappe.form_dict
+def create_donation(data, donor):
+    donation = frappe.new_doc("Donation")
+    donation.update({
+        "doctype": "Donation",
+        "donor_id": donor.name,
+        "date_of_donation": data['date_of_donation'],
+        "tranche_amount": data['donation_amount']
+    })
+
+    donation.insert(ignore_permissions=True)
+
+    
