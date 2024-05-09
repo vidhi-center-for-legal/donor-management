@@ -99,7 +99,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-15 11:03:07.254716",
+ "modified": "2024-05-09 16:54:42.204424",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Agent",
@@ -119,8 +119,10 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "agent_name",
  "track_changes": 1
 }
