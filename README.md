@@ -70,15 +70,16 @@ Installing Frappe Framework: Frappe Version 16
 # API Details 
 - API 1: To generate Token for authentication
     - Method: GET
-    - End Point: https://<DNS>/api/method/donor_management.donor_management.donor_api.get_token_api
+    - End Point: https://[DNS]/api/method/donor_management.donor_management.donor_api.get_token_api
 - API 2: To send the donor and donation details to donor management app
     - Method: POST
-    - End Point: https://<DNS>/api/method/donor_management.donor_management.donor_api.send_donation_data
-- Before Using the APIs, the system manager must add : 
+    - End Point: https://[DNS]/api/method/donor_management.donor_management.donor_api.send_donation_data
+- Before Using the APIs, the system manager must add details in  Udhyam Website API Settings Doc : 
     1. username
     2. password
     3. time period for token expiration
     4. Secret key 
+    5. Check the Enable Api Access Checkbox.
 - After Adding these records, The system manager will save the document.
 - Sample data: 
     - username: udhyam
