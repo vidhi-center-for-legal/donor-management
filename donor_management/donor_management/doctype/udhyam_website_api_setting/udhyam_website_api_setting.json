@@ -8,34 +8,46 @@
   "username",
   "password",
   "token_expiry_time_mins",
-  "secret_key"
+  "secret_key",
+  "enable_api_access"
  ],
  "fields": [
   {
    "fieldname": "username",
    "fieldtype": "Data",
-   "label": "Username"
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
   },
   {
    "fieldname": "password",
    "fieldtype": "Data",
-   "label": "Password"
+   "label": "Password",
+   "reqd": 1
   },
   {
    "fieldname": "token_expiry_time_mins",
    "fieldtype": "Int",
-   "label": "Token Expiry Time (mins)"
+   "label": "Token Expiry Time (mins)",
+   "reqd": 1
   },
   {
    "fieldname": "secret_key",
    "fieldtype": "Data",
-   "label": "Secret Key"
+   "label": "Secret Key",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_api_access",
+   "fieldtype": "Check",
+   "label": "Enable API Access"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-05-08 16:32:45.353694",
+ "modified": "2024-05-09 11:58:19.531560",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Udhyam Website API Setting",

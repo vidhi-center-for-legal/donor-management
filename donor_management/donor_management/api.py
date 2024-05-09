@@ -5,12 +5,14 @@ def update_donor_donation_details(data):
     try:
         update_donor_details(data)
         return {
-            "success": "True"
+            "success": "Data Imported Successfully and Saved as Draft."
         }
     except Exception as e:
-        frappe.log_error(str(e))
+        frappe.log_error("Donor API request Failed :"+ str(e))
         
-        return str(e)
+        return {
+            "Error" : "Something went wrong!"
+        }
 
 def update_donor_details(data):
     existing_donor = frappe.get_all("Donor", filters={"donor_name": data['donor_name'], "email": data['email']})
@@ -31,8 +33,6 @@ def create_donor_donation(donor, data):
     create_donation(data, donor)
 
 def create_donation(data, donor):
-    print(data)
-    print(donor)
     donation = frappe.new_doc("Donation")
     donation.update({
         "doctype": "Donation",

@@ -30,7 +30,6 @@ def add_donation_to_overall_donation(doc):
         donation_details = frappe.get_doc(doc)
         donor_id = donation_details.get("donor_id")
         donor_email = donation_details.get("email")
-        print(donation_details)
         overall_donation_document = frappe.get_all('Overall Donation', filters={'donor_id': donor_id, 'donor_email': donor_email }, limit=1)
         if not overall_donation_document:
             add_new_overall_donation(donation_details)

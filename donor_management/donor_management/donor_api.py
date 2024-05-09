@@ -6,16 +6,29 @@ import datetime
 from donor_management.donor_management.api import update_donor_donation_details 
 
 
-
 def get_api_settings(field):
-    sql_query = "SELECT value FROM `tabSingles`    WHERE doctype = 'Udhyam Website API Setting' AND field IN ('"+field+"')"
-    response =  frappe.db.sql(sql_query, as_dict=True)
-    return response[0]["value"]
+    sql_query = """
+        SELECT value
+        FROM `tabSingles`
+        WHERE doctype = 'Udhyam Website API Setting'
+        AND field = %(field)s
+    """
+    response = frappe.db.sql(sql_query, {"field": field}, as_dict=True)
+    return response[0]["value"] if response else None
     
+
+def is_api_enabled():
+    enabled = get_api_settings("enable_api_access")
+    return enabled == "1" if enabled else False
 
 
 @frappe.whitelist(allow_guest=True, methods= ['GET'])
 def get_token_api():
+    
+    if not is_api_enabled():
+        return {"message": "API access is disabled"}
+
+    
     try:
         data = frappe.parse_json(frappe.safe_decode(frappe.request.get_data()))
         username = data.username
@@ -24,7 +37,7 @@ def get_token_api():
             token = generate_token(username)
             return {'token': token}
         else:
-            return {'message': 'Invalid credentials'}, 401
+            return {'message': 'Invalid credentials'}
     except ValueError as e:
         return {
             "error": "Missing parameters!"
@@ -81,6 +94,9 @@ def validate_date_format(date_str):
 
 @frappe.whitelist(allow_guest=True, methods=['POST'])
 def send_donation_data():
+    if not is_api_enabled():
+        return {"message": "API access is disabled"}
+
     if "Token" in frappe.request.headers:
         token = frappe.request.headers['Token']
         response = verify_token(token)
