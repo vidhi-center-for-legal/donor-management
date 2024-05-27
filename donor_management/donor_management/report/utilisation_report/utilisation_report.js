@@ -21,6 +21,12 @@ frappe.query_reports["Utilisation Report"] = {
 			"label": __("Utilisation Type"),
 			"fieldtype": "Link",
 			"options" : "Utilisation Type"
+		},
+		{
+			"fieldname":"project",
+			"label":__("Projects"),
+			"fieldtype":"Link",
+			"options":"Project Details"
 		}
 	],
 	after_datatable_render: function(datatable_obj) {

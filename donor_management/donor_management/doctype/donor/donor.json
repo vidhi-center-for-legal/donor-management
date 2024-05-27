@@ -169,9 +169,13 @@
   {
    "link_doctype": "Overall Donation",
    "link_fieldname": "donor_id"
+  },
+  {
+   "link_doctype": "Project Details",
+   "link_fieldname": "donor_name"
   }
  ],
- "modified": "2024-05-06 16:40:37.840701",
+ "modified": "2024-05-27 14:36:43.270483",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",
