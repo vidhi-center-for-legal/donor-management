@@ -1,6 +1,12 @@
 function convertToDonor(frm) {
+    if (!frm.doc.pan_card) {
+        frappe.msgprint(__('PAN Card is mandatory for converting to a Donor'));
+        return;
+    }
+
     var leadName = frm.doc.lead_name;
     var email = frm.doc.email;
+    var pan_card = frm.doc.pan_card;
 
     frappe.confirm(
         __('This action will create a new donor record with the following details:') +
@@ -12,8 +18,9 @@ function convertToDonor(frm) {
             frappe.call({
                 method: "donor_management.donor_management.doctype.leads.custom.create_or_update_donor",
                 args: {
+                    pan_card: pan_card,
                     lead_name: leadName,
-                    email: email, // Pass email to Python function
+                    email: email, 
                     name: frm.doc.name
                 },
                 callback: function(r) {
@@ -31,7 +38,6 @@ function convertToDonor(frm) {
             frappe.msgprint(__('Conversion to donor cancelled.'));
         }
     );
-    
 }
 
 frappe.ui.form.on('Leads', {

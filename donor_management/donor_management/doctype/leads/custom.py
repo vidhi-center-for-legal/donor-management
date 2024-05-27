@@ -2,7 +2,9 @@ import frappe
 from frappe import _
 
 @frappe.whitelist()
-def create_or_update_donor(lead_name, email, name):
+def create_or_update_donor(lead_name, email, name, pan_card):
+    if not pan_card:
+        frappe.throw(_('PAN Card is mandatory for converting to a Donor'))
     try:
         lead_details = frappe.get_doc('Leads', name)
         lead_name = lead_details.lead_name

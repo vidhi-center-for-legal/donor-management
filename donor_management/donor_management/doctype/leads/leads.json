@@ -129,8 +129,7 @@
   {
    "fieldname": "pan_card",
    "fieldtype": "Data",
-   "label": "PAN Card",
-   "reqd": 1
+   "label": "PAN Card"
   },
   {
    "fieldname": "attachment_section_section",
@@ -153,7 +152,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-06 17:38:59.030549",
+ "modified": "2024-05-27 13:06:30.249426",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Leads",
