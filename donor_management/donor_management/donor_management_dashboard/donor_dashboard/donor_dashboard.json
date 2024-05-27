@@ -2,6 +2,9 @@
  "cards": [
   {
    "card": "Total Donors"
+  },
+  {
+   "card": "Total Projects"
   }
  ],
  "charts": [
@@ -17,7 +20,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-04-16 11:48:51.712070",
+ "modified": "2024-05-27 14:30:48.036398",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor Dashboard",

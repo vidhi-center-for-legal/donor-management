@@ -9,15 +9,15 @@
  ],
  "charts": [
   {
-   "chart": "Department wise Utilisation",
-   "width": "Half"
-  },
-  {
    "chart": "Utilisation Value based on Utilisation type",
    "width": "Half"
   },
   {
    "chart": "Department Wise Utilisation Value",
+   "width": "Half"
+  },
+  {
+   "chart": "Utilisation Value For Each Project",
    "width": "Half"
   }
  ],
@@ -28,7 +28,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-04-17 14:56:00.773461",
+ "modified": "2024-05-27 14:23:33.898042",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Utilisation Dashboard",

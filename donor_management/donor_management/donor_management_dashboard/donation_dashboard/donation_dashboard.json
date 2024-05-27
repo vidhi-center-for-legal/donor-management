@@ -29,6 +29,14 @@
   {
    "chart": "Donation Value Received through Different Mode of Payment",
    "width": "Half"
+  },
+  {
+   "chart": "Total Donation For Each Vertical",
+   "width": "Half"
+  },
+  {
+   "chart": "Donation Value for Different Projects",
+   "width": "Half"
   }
  ],
  "creation": "2024-04-08 12:40:31.007659",
@@ -38,7 +46,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-04-17 15:22:44.224398",
+ "modified": "2024-05-27 14:15:27.732568",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation Dashboard",
