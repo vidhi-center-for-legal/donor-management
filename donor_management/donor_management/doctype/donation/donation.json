@@ -12,11 +12,13 @@
   "donor_name",
   "donor_type",
   "organisation",
+  "project",
   "column_break_arme",
   "designation",
   "email",
   "engagement_start_date",
   "engagement_end_date",
+  "vertical",
   "tranche_details_section",
   "tranche_name",
   "date_of_donation",
@@ -219,13 +221,25 @@
    "fieldname": "pan_card",
    "fieldtype": "Data",
    "label": "Pan Card"
+  },
+  {
+   "fieldname": "vertical",
+   "fieldtype": "Link",
+   "label": "Vertical",
+   "options": "Department Name"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project ",
+   "options": "Project Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-09 11:39:39.767851",
+ "modified": "2024-05-27 14:13:23.821269",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation",
