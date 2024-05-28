@@ -175,7 +175,7 @@
    "link_fieldname": "donor_name"
   }
  ],
- "modified": "2024-05-27 14:36:43.270483",
+ "modified": "2024-05-28 13:05:37.680755",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",
@@ -200,5 +200,6 @@
  "sort_order": "DESC",
  "states": [],
  "title_field": "donor_name",
- "track_changes": 1
+ "track_changes": 1,
+ "translated_doctype": 1
 }
