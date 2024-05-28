@@ -5,11 +5,30 @@
   },
   {
    "card": "Total Potential Funders"
+  },
+  {
+   "card": "Total Agents"
   }
  ],
  "charts": [
   {
    "chart": "Leads by Lead status",
+   "width": "Full"
+  },
+  {
+   "chart": "Leads based on the Lead Type",
+   "width": "Half"
+  },
+  {
+   "chart": "Leads based on Preffered Communication Method",
+   "width": "Half"
+  },
+  {
+   "chart": "Agents Based on Agent Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Department Wise Agents",
    "width": "Half"
   }
  ],
@@ -20,7 +39,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-04-17 15:28:43.895520",
+ "modified": "2024-05-28 12:33:54.062116",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Lead Dashboard",
