@@ -68,6 +68,7 @@ Installing Frappe Framework: Frappe Version 16
 - checkout the following video for the reference to install apps on frappe cloud https://youtu.be/GeEiskWLf2k?si=b533oUm4oWk92kTa
 
 # API Details 
+- Add record 'Website Donor' in Donor Type
 - API 1: To generate Token for authentication
     - Method: GET
     - End Point: https://[DNS]/api/method/donor_management.donor_management.donor_api.get_token_api
