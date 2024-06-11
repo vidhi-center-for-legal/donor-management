@@ -8,9 +8,7 @@ def create_or_update_donor(lead_name, email, name, pan_card):
     try:
         lead_details = frappe.get_doc('Leads', name)
         lead_name = lead_details.lead_name
-        print(email)
         existing_donor = frappe.get_all('Donor', filters={'donor_name': lead_name, 'email': email}, limit=1)
-        print(existing_donor)
         if not existing_donor:
             return create_new_donor(lead_details, email)
         else:
