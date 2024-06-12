@@ -20,7 +20,6 @@ def leads_count(agent_name):
         filters={"agent_handling_the_lead": current_agent},
         fieldname="count(name)"
     )
-    print(current_agent_leads_count)
     return {"current_agent_leads_count": current_agent_leads_count}
 
 @frappe.whitelist()
