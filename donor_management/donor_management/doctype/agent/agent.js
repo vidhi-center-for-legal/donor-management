@@ -10,11 +10,13 @@ frappe.ui.form.on('Agent', {
 
 function transferLeads(frm) {
     var agent_name = frm.doc.agent_name;
+    var agent_id = frm.doc.name
 
     frappe.call({
         method: 'donor_management.donor_management.doctype.agent.custom.leads_count',
         args: {
-            agent_name: agent_name
+            agent_id : agent_id
+
         },
         callback: function(r) {
             if (r.message) {
@@ -40,13 +42,12 @@ function transferLeads(frm) {
                     ],
                     function(values) {
                         if (values) {
-                            
 
                             frappe.confirm(
                                 __('Are you sure you want to transfer the leads?'),
                                 () => {
-                                        updateLeads(frm);
                                         frm.set_value('agent_for_lead_transfer', values.agent_for_lead_transfer);
+                                        updateLeads(frm);
                                         frm.set_value('agent_status', 'Left')
                                     },
                                     () => {
@@ -62,28 +63,31 @@ function transferLeads(frm) {
              else {
                 frappe.msgprint('No Leads to Transfer');
                 
-                
             }
         }
     }
     });
 }
-
 function updateLeads(frm) {
     var agent_for_lead_transfer = frm.doc.agent_for_lead_transfer;
     var agent_name = frm.doc.agent_name;
+    var agent_id = frm.doc.name
 
     frappe.call({
         method: 'donor_management.donor_management.doctype.agent.custom.update_leads_for_transferred_agent',
         args: {
             doc: frm.doc,
             agent_for_lead_transfer: agent_for_lead_transfer,
-            agent_name: agent_name
+            agent_name: agent_name,
+            agent_id: agent_id
         },
         callback: function(r) {
             if (r.message) {
+                
                 frappe.msgprint(r.message);
-                frm.save();
+                setTimeout(function() {
+                    frm.save();
+                }, 2000);
             } else {
                 frappe.msgprint('Failed to update leads.');
             }
@@ -93,3 +97,4 @@ function updateLeads(frm) {
         }
     });
 }
+

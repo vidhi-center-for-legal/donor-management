@@ -48,7 +48,8 @@
    "fieldname": "agent_for_lead_transfer",
    "fieldtype": "Link",
    "label": "Agent for lead transfer",
-   "options": "Agent"
+   "options": "Agent",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_nycj",
@@ -99,7 +100,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-09 16:54:42.204424",
+ "modified": "2024-06-12 15:58:46.059771",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Agent",
