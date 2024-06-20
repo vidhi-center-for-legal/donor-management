@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:organisation_name",
+ "creation": "2024-06-20 12:39:51.528066",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lead_details_section",
+  "organisation_name",
+  "naming_series",
+  "funder_status",
+  "assigned_poc_from_vidhi_centre",
+  "remarks",
+  "column_break_uhko",
+  "website",
+  "preferred_communication",
+  "potential_funder",
+  "reason_for_pf",
+  "department",
+  "funder_program",
+  "to_do_section",
+  "to_do",
+  "section_break_hwqt",
+  "amount",
+  "funder_type",
+  "start_date",
+  "column_break_wrzw",
+  "financial_year",
+  "status",
+  "end_date",
+  "attachment_section_section",
+  "presentation_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "lead_details_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Funder ID",
+   "options": "Lead-.YYYY.-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uhko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "organisation_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Organisation Name",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "potential_funder",
+   "fieldtype": "Check",
+   "label": "Potential Funder"
+  },
+  {
+   "depends_on": "eval: doc.potential_funder == true",
+   "fieldname": "reason_for_pf",
+   "fieldtype": "Data",
+   "label": "Reason for PF"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Table MultiSelect",
+   "label": "Verticals",
+   "options": "Departments",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachment_section_section",
+   "fieldtype": "Section Break",
+   "label": "Attachment Section"
+  },
+  {
+   "fieldname": "presentation_details",
+   "fieldtype": "Table",
+   "label": "Presentation Details",
+   "options": "Attachments"
+  },
+  {
+   "default": "Pipeline",
+   "fieldname": "funder_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Funder Status",
+   "options": "Pipeline\nExpected\nCommitted",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "preferred_communication",
+   "fieldtype": "Link",
+   "label": " Preferred Communication",
+   "options": "Preferred Communication",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "assigned_poc_from_vidhi_centre",
+   "fieldtype": "Link",
+   "label": "Assigned POC from Vidhi Centre",
+   "options": "Vidhi Centre POC"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "to_do",
+   "fieldtype": "Table",
+   "label": "To Do Items",
+   "options": "To Do Items"
+  },
+  {
+   "fieldname": "funder_program",
+   "fieldtype": "Link",
+   "label": "Funder Program",
+   "options": "Funder Program"
+  },
+  {
+   "fieldname": "to_do_section",
+   "fieldtype": "Section Break",
+   "label": "To Do "
+  },
+  {
+   "depends_on": "eval: doc.funder_status != 'Pipeline'",
+   "fieldname": "section_break_hwqt",
+   "fieldtype": "Section Break",
+   "label": "Expected Stage Details"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End date"
+  },
+  {
+   "fieldname": "funder_type",
+   "fieldtype": "Link",
+   "label": "Funder Type",
+   "options": "Funder Type"
+  },
+  {
+   "fieldname": "column_break_wrzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "label": "Financial Year",
+   "options": "Financial Year"
+  },
+  {
+   "default": "Untied",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Tied\nUntied"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-20 17:51:40.560112",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Funder",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "organisation_name"
+}

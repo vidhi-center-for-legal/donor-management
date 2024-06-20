@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:poc_name",
+ "creation": "2024-06-20 15:39:44.766225",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "poc_name",
+  "mobile",
+  "email",
+  "designation"
+ ],
+ "fields": [
+  {
+   "fieldname": "poc_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Phone",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-20 15:57:13.306047",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Vidhi Centre POC",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
