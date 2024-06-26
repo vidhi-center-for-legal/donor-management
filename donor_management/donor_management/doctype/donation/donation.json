@@ -8,7 +8,7 @@
  "field_order": [
   "donor_details_section",
   "naming_series",
-  "donor_id",
+  "funder_id",
   "donor_name",
   "donor_type",
   "organisation",
@@ -19,6 +19,7 @@
   "engagement_start_date",
   "engagement_end_date",
   "vertical",
+  "donation_status",
   "tranche_details_section",
   "tranche_name",
   "date_of_donation",
@@ -31,7 +32,6 @@
   "left_over_donation",
   "mode_of_payment",
   "pan_card",
-  "donation_status",
   "amended_from",
   "paid",
   "receipt_details_section",
@@ -46,10 +46,9 @@
    "label": "Donor Details"
   },
   {
-   "fetch_from": "donor_id.organisation_name",
    "fieldname": "organisation",
    "fieldtype": "Data",
-   "label": "Organisation"
+   "label": "Organisation Name"
   },
   {
    "fieldname": "date_of_donation",
@@ -115,9 +114,9 @@
   },
   {
    "fieldname": "donation_status",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Donation Status",
-   "options": "Donation Status"
+   "options": "On Time\nDelayed\nReceived Early"
   },
   {
    "fieldname": "column_break_swjj",
@@ -158,13 +157,6 @@
    "fieldname": "paid",
    "fieldtype": "Check",
    "label": "Paid"
-  },
-  {
-   "fieldname": "donor_id",
-   "fieldtype": "Link",
-   "label": "Donor ID",
-   "options": "Donor",
-   "search_index": 1
   },
   {
    "fieldname": "naming_series",
@@ -233,13 +225,20 @@
    "fieldtype": "Link",
    "label": "Project ",
    "options": "Project Details"
+  },
+  {
+   "fieldname": "funder_id",
+   "fieldtype": "Link",
+   "label": "Funder ID",
+   "options": "Funder",
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-27 14:13:23.821269",
+ "modified": "2024-06-21 16:42:49.942349",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation",

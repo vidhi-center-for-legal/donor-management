@@ -22,7 +22,6 @@
   "preferred_communication_method",
   "donor_type",
   "tax_identification_number",
-  "pan_card",
   "aadhar_number",
   "presentation_given",
   "departments",
@@ -107,12 +106,6 @@
    "label": "Tax Identification Number"
   },
   {
-   "fieldname": "pan_card",
-   "fieldtype": "Data",
-   "label": "Pan Number",
-   "reqd": 1
-  },
-  {
    "fieldname": "aadhar_number",
    "fieldtype": "Data",
    "label": "Aadhar Number"
@@ -175,7 +168,7 @@
    "link_fieldname": "donor_name"
   }
  ],
- "modified": "2024-05-28 13:05:37.680755",
+ "modified": "2024-06-25 15:31:31.362482",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",

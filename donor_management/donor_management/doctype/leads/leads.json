@@ -105,7 +105,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Lead Status",
-   "options": "Future Pipeline\nCold Lead\nWarm Lead\nHot Lead\nRejected\nConverted to donor\nNone",
+   "options": "Future Pipeline\nCold Lead\nWarm Lead\nHot Lead\nRejected\nCommitted\nNone\nExpected",
    "sort_options": 1
   },
   {
@@ -159,7 +159,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 11:42:15.470974",
+ "modified": "2024-06-25 15:29:32.572728",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Leads",
