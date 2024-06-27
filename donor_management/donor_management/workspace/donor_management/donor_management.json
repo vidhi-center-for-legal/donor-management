@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"nAUGKLMVL2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Donor Management</span>\",\"col\":12}},{\"id\":\"g_bvrpemvq\",\"type\":\"card\",\"data\":{\"card_name\":\"Lead and Agent Details\",\"col\":4}},{\"id\":\"y9Z6RqpCZx\",\"type\":\"card\",\"data\":{\"card_name\":\"Donor and Project Details\",\"col\":4}},{\"id\":\"NaxtPTkVQq\",\"type\":\"card\",\"data\":{\"card_name\":\"Donation Details\",\"col\":4}},{\"id\":\"EXY1nJWdtO\",\"type\":\"card\",\"data\":{\"card_name\":\"Utilisation Details\",\"col\":4}},{\"id\":\"qsQUcHX50h\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":4}},{\"id\":\"wXdHRi7QeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Email Campaign\",\"col\":4}},{\"id\":\"Q-A8k6eJIk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Data Insights</b></span>\",\"col\":12}},{\"id\":\"1FYVr7z5jW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead Dashboard\",\"col\":3}},{\"id\":\"fS8d6OXNK9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donor Dashboard\",\"col\":3}},{\"id\":\"K6BajaBt0i\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Dashboard\",\"col\":3}},{\"id\":\"nLoJlyf6YP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Dashboard\",\"col\":3}}]",
+ "content": "[{\"id\":\"nAUGKLMVL2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Donor Management</span>\",\"col\":12}},{\"id\":\"g_bvrpemvq\",\"type\":\"card\",\"data\":{\"card_name\":\"Funder Details\",\"col\":4}},{\"id\":\"y9Z6RqpCZx\",\"type\":\"card\",\"data\":{\"card_name\":\"Donor and Project Details\",\"col\":4}},{\"id\":\"NaxtPTkVQq\",\"type\":\"card\",\"data\":{\"card_name\":\"Donation Details\",\"col\":4}},{\"id\":\"EXY1nJWdtO\",\"type\":\"card\",\"data\":{\"card_name\":\"Utilisation Details\",\"col\":4}},{\"id\":\"qsQUcHX50h\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":4}},{\"id\":\"wXdHRi7QeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Email Campaign\",\"col\":4}},{\"id\":\"Q-A8k6eJIk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Data Insights</b></span>\",\"col\":12}},{\"id\":\"1FYVr7z5jW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead Dashboard\",\"col\":3}},{\"id\":\"fS8d6OXNK9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donor Dashboard\",\"col\":3}},{\"id\":\"K6BajaBt0i\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Dashboard\",\"col\":3}},{\"id\":\"nLoJlyf6YP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Dashboard\",\"col\":3}}]",
  "creation": "2024-02-19 15:51:49.184106",
  "custom_blocks": [],
  "docstatus": 0,
@@ -170,31 +170,11 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Lead and Agent Details",
-   "link_count": 3,
+   "label": "Funder Details",
+   "link_count": 1,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Leads",
-   "link_count": 0,
-   "link_to": "Leads",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Agent",
-   "link_count": 0,
-   "link_to": "Agent",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   },
   {
    "hidden": 0,
@@ -207,7 +187,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-06-20 13:13:37.068117",
+ "modified": "2024-06-27 12:45:07.433300",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor Management",

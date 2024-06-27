@@ -3,8 +3,10 @@ from frappe import _
 
 @frappe.whitelist()
 def create_or_update_donor(funder_status,naming_series):
-    if (funder_status!="Expected"):
-        frappe.throw(_('Lead status should be Expected'))
+    if (funder_status == "Committed"):
+        frappe.throw(_('Funder is already in committed stage'))
+    elif (funder_status!="Expected"):
+        frappe.throw(_('Funder status should be Expected'))
     try:
         funder_details = frappe.get_doc('Funder', naming_series)
         #lead_name = lead_details.organisation_name
@@ -41,16 +43,18 @@ def create_new_donor(funder_details):
 
 
 def update_donor_details(donor, funder_details):
-    #@Todo update veriables based on Funder Doctype
-    donor.donor_name = funder_details.lead_name
-    donor.email = "a@g.com"
-    donor.gender = funder_details.gender
-    donor.dob = funder_details.date_of_birth
-    donor.phone = funder_details.phone
     donor.organisation_name = funder_details.organisation_name
-    donor.preferred_communication_method = funder_details.preferred_communication_method
-    donor.designation = funder_details.designation
-    donor.pan_card = funder_details.pan_card
+    donor.website=funder_details.website
+    donor.phone = funder_details.phone
+    donor.preferred_communication = funder_details.preferred_communication
+    donor.assigned_poc_from_vidhi_centre = funder_details.assigned_poc_from_vidhi_centre
+    donor.funder_program = funder_details.funder_program
+    donor.amount = funder_details.amount
+    donor.financial_year = funder_details.financial_year
+    donor.funder_type = funder_details.funder_type
+    donor.status = funder_details.status
+    donor.start_date = funder_details.start_date
+    donor.end_date = funder_details.end_date
     donor.presentation_given = True
     existing_departments = {d.department_name for d in donor.departments}
     
@@ -62,23 +66,12 @@ def update_donor_details(donor, funder_details):
     existing_attachments = {(a.name1, a.date, a.agent_uploading, a.attachment) for a in donor.presentation_details}
     
     for attachment in funder_details.get("presentation_details"):
-        key = (attachment.name1, attachment.date, attachment.agent_uploading, attachment.attachment)
+        key = (attachment.name1, attachment.date, attachment.attachment)
         if key not in existing_attachments:
             donor.append("presentation_details", {
                 "name1": attachment.name1,
                 "date": attachment.date,
-                "agent_uploading": attachment.agent_uploading,
                 "attachment": attachment.attachment
-            })
-    existing_todo_items = {(t.task, t.status, t.notes) for t in donor.to_do}
-
-    for todo in funder_details.get("to_do"):
-        key = (todo.task, todo.status, todo.notes)
-        if key not in existing_todo_items:
-            donor.append("to_do",{
-                "task": todo.task,
-                "status": todo.status,
-                "notes":todo.notes 
             })
 
 

@@ -12,13 +12,12 @@ function convertToDonor(frm) {
                     funder_status: frm.doc.funder_status,
                     naming_series: frm.doc.name,
                 },
-                //@Todo update the args as per funder details
                 callback: function(r) {
                     if (r.message) { 
                         frm.set_value("funder_status", "Committed");
-                        //@ToDo change lead_status as per funder doctype
-                        frm.save();
-                        frappe.msgprint(__('Funder converted to committed stage successfully.'));
+                        frm.save().then(() => {
+                            frappe.msgprint(__('Funder converted to donor successfully.'));
+                        });
                     } else {
                         frappe.msgprint(__('Funder conversion to committed stage failed.'));
                     }
@@ -35,7 +34,15 @@ frappe.ui.form.on('Funder', {
     refresh: function(frm) {
         if (!frm.doc.__islocal && !frm.doc.donor) {
             frm.add_custom_button(__('Convert to committed stage'), function() {
-                convertToDonor(frm);
+                if(frm.doc.funder_status=="Pipeline" || frm.doc.funder_status=="Committed")
+                    {
+                        frappe.msgprint(__('Funder sould be in expected stage for converting it as Donor!'+frm.doc.name));
+                        
+                    }
+                    else{
+                        convertToDonor(frm);
+                    }
+               
             }).addClass('btn-primary');
         }
     }

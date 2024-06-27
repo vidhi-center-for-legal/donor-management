@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:{YYYY}-{organisation_name}-{####}",
  "creation": "2024-06-20 12:39:51.528066",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,42 +9,38 @@
  "field_order": [
   "lead_details_section",
   "organisation_name",
-  "naming_series",
   "funder_status",
+  "date_of_creation",
   "assigned_poc_from_vidhi_centre",
   "remarks",
   "column_break_uhko",
   "website",
+  "funder_poc",
   "preferred_communication",
   "potential_funder",
   "reason_for_pf",
   "department",
   "funder_program",
-  "to_do_section",
-  "to_do",
   "section_break_hwqt",
   "amount",
   "funder_type",
-  "start_date",
   "column_break_wrzw",
   "financial_year",
   "status",
+  "section_break_jpvr",
+  "start_date",
+  "column_break_worx",
   "end_date",
   "attachment_section_section",
-  "presentation_details"
+  "presentation_details",
+  "to_do_section",
+  "to_do"
  ],
  "fields": [
   {
    "fieldname": "lead_details_section",
    "fieldtype": "Section Break",
-   "label": "Lead Details"
-  },
-  {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Funder ID",
-   "options": "Lead-.YYYY.-",
-   "read_only": 1
+   "label": "Funder Details"
   },
   {
    "fieldname": "column_break_uhko",
@@ -56,7 +52,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Organisation Name",
-   "unique": 1
+   "reqd": 1
   },
   {
    "default": "0",
@@ -68,14 +64,14 @@
    "depends_on": "eval: doc.potential_funder == true",
    "fieldname": "reason_for_pf",
    "fieldtype": "Data",
-   "label": "Reason for PF"
+   "label": "Reason for Potential Funder"
   },
   {
    "fieldname": "department",
    "fieldtype": "Table MultiSelect",
+   "hidden": 1,
    "label": "Verticals",
-   "options": "Departments",
-   "reqd": 1
+   "options": "Departments"
   },
   {
    "fieldname": "attachment_section_section",
@@ -89,18 +85,9 @@
    "options": "Attachments"
   },
   {
-   "default": "Pipeline",
-   "fieldname": "funder_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Funder Status",
-   "options": "Pipeline\nExpected\nCommitted",
-   "sort_options": 1
-  },
-  {
    "fieldname": "website",
    "fieldtype": "Data",
-   "label": "Website"
+   "label": "Website URL"
   },
   {
    "fieldname": "preferred_communication",
@@ -146,7 +133,8 @@
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
-   "label": "Amount"
+   "in_list_view": 1,
+   "label": "Amount &#8377;"
   },
   {
    "fieldname": "start_date",
@@ -182,6 +170,41 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Tied\nUntied"
+  },
+  {
+   "fieldname": "funder_poc",
+   "fieldtype": "Link",
+   "label": "Funder POC",
+   "options": "Funder POC"
+  },
+  {
+   "default": "Pipeline",
+   "fieldname": "funder_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Funder Status",
+   "options": "Pipeline\nExpected\nCommitted",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "depends_on": "eval: doc.funder_status != 'Pipeline'",
+   "fieldname": "section_break_jpvr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_worx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_creation",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "in_filter": 1,
+   "label": "Date of Creation ",
+   "read_only": 1,
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -191,11 +214,11 @@
    "link_fieldname": "funder_id_meet"
   }
  ],
- "modified": "2024-06-25 14:59:40.690927",
+ "modified": "2024-06-27 13:38:55.996906",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Funder",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

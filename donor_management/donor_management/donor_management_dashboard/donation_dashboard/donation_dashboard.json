@@ -11,31 +11,22 @@
   },
   {
    "card": "Total Donation Value Available to Utilise"
+  },
+  {
+   "card": "Overall Donation Expected"
   }
  ],
  "charts": [
   {
-   "chart": "Total Donation by Donor",
+   "chart": "Funder Stage with Funder Count",
    "width": "Full"
   },
   {
-   "chart": "No. of Tranches by Each Donor",
-   "width": "Full"
-  },
-  {
-   "chart": "No. of Tranches based on Different Currencies",
+   "chart": "Total Funds Received by Funder Type",
    "width": "Half"
   },
   {
-   "chart": "Donation Value Received through Different Mode of Payment",
-   "width": "Half"
-  },
-  {
-   "chart": "Total Donation For Each Vertical",
-   "width": "Half"
-  },
-  {
-   "chart": "Donation Value for Different Projects",
+   "chart": "Total Funds Received by Program",
    "width": "Half"
   }
  ],
@@ -46,7 +37,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-05-27 14:15:27.732568",
+ "modified": "2024-06-27 14:56:28.105164",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation Dashboard",
