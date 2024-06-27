@@ -8,7 +8,7 @@ def create_or_update_donor(funder_status,naming_series):
     elif (funder_status!="Expected"):
         frappe.throw(_('Funder status should be Expected'))
     try:
-        funder_details = frappe.get_doc('Funder', naming_series)
+        funder_details = frappe.get_doc('Funder', naming_series)        
         #lead_name = lead_details.organisation_name
         existing_donor = frappe.get_all('Donor', filters={'donor_name': naming_series,}, limit=1)
         if not existing_donor:
@@ -73,5 +73,6 @@ def update_donor_details(donor, funder_details):
                 "date": attachment.date,
                 "attachment": attachment.attachment
             })
+
 
 

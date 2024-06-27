@@ -1,9 +1,7 @@
 function convertToDonor(frm) {
-  
+    const org_name = frm.doc.organisation_name.toUpperCase();
     frappe.confirm(
-        __('This action will create a new donor record in commited stage with the following details:') +
-        '<br><br>' +
-        __('Funder Name: {0}', [frm.doc.organisation_name]) ,
+        __('Click <strong>Yes</strong> button to covert <strong>'+org_name+'</strong> as donor and set funder status as <strong>committed</strong>') ,
         () => { 
             frappe.call({
                 method: "donor_management.donor_management.doctype.funder.custom.create_or_update_donor",
@@ -33,10 +31,10 @@ function convertToDonor(frm) {
 frappe.ui.form.on('Funder', {
     refresh: function(frm) {
         if (!frm.doc.__islocal && !frm.doc.donor) {
-            frm.add_custom_button(__('Convert to committed stage'), function() {
+            frm.add_custom_button(__('Convert to committed funder'), function() {
                 if(frm.doc.funder_status=="Pipeline" || frm.doc.funder_status=="Committed")
                     {
-                        frappe.msgprint(__('Funder sould be in expected stage for converting it as Donor!'+frm.doc.name));
+                        frappe.msgprint(__('Funder sould be in expected status for converting it as Donor!'));
                         
                     }
                     else{

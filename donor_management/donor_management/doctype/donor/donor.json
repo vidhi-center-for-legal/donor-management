@@ -11,7 +11,7 @@
   "organisation_name",
   "naming_series",
   "dob",
-  "designationassigned_poc_from_vidhi_centre",
+  "assigned_poc_from_vidhi_centre",
   "tax_identification_number",
   "funder_program",
   "pan_card",
@@ -46,7 +46,8 @@
    "fieldname": "organisation_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Organisation Name"
+   "label": "Organisation Name",
+   "search_index": 1
   },
   {
    "fieldname": "column_break_uhko",
@@ -164,12 +165,6 @@
    "options": "Preferred Communication"
   },
   {
-   "fieldname": "designationassigned_poc_from_vidhi_centre",
-   "fieldtype": "Link",
-   "label": "Assigned POC from Vidhi Centre",
-   "options": "Vidhi Centre POC"
-  },
-  {
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
@@ -194,6 +189,12 @@
    "fieldname": "table_tzlv",
    "fieldtype": "Table",
    "options": "To Do Items"
+  },
+  {
+   "fieldname": "assigned_poc_from_vidhi_centre",
+   "fieldtype": "Link",
+   "label": "Assigned POC from Vidhi Centre",
+   "options": "Vidhi Centre POC"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -211,7 +212,7 @@
    "link_fieldname": "donor_id"
   }
  ],
- "modified": "2024-06-27 13:19:52.692923",
+ "modified": "2024-06-27 17:19:52.064341",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",

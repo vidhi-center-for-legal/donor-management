@@ -231,7 +231,7 @@
    "options": "Funder Program"
   },
   {
-   "fetch_from": "donor_id.donor_type",
+   "fetch_from": "donor_id_donation.donor_type",
    "fieldname": "funder_type",
    "fieldtype": "Link",
    "label": "Funder Type",

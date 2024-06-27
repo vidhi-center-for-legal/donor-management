@@ -6,5 +6,4 @@ from frappe.model.document import Document
 
 
 class Funder(Document):
-	def print_donor():
-		return "hello"
+	pass
