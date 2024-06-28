@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Stage wise Funder Count",
+   "width": "Half"
+  },
+  {
+   "chart": "Total Funds Received by Funder Type",
+   "width": "Half"
+  },
+  {
+   "chart": "Total Funds Received by Program",
+   "width": "Full"
+  }
+ ],
+ "creation": "2024-06-28 11:47:37.893742",
+ "dashboard_name": "Funder and Donation Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-06-28 11:50:21.592086",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Funder and Donation Dashboard",
+ "owner": "Administrator"
+}

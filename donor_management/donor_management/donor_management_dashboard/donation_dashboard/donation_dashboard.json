@@ -18,15 +18,15 @@
  ],
  "charts": [
   {
-   "chart": "Funder Stage with Funder Count",
-   "width": "Full"
-  },
-  {
    "chart": "Total Funds Received by Funder Type",
    "width": "Half"
   },
   {
    "chart": "Total Funds Received by Program",
+   "width": "Half"
+  },
+  {
+   "chart": "Stage wise Funder Count",
    "width": "Half"
   }
  ],
@@ -35,9 +35,9 @@
  "docstatus": 0,
  "doctype": "Dashboard",
  "idx": 0,
- "is_default": 0,
+ "is_default": 1,
  "is_standard": 1,
- "modified": "2024-06-27 14:56:28.105164",
+ "modified": "2024-06-28 11:40:34.800977",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation Dashboard",

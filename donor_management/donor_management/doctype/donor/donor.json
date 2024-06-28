@@ -19,6 +19,7 @@
   "column_break_uhko",
   "website",
   "preferred_communication",
+  "email",
   "phone",
   "alternative_number",
   "aadhar_number",
@@ -77,7 +78,6 @@
    "label": "Aadhar Number"
   },
   {
-   "depends_on": "eval: doc.presentation_given == true",
    "fieldname": "presentation_details_section",
    "fieldtype": "Section Break",
    "label": "Agreement and Compliances"
@@ -195,13 +195,20 @@
    "fieldtype": "Link",
    "label": "Assigned POC from Vidhi Centre",
    "options": "Vidhi Centre POC"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [
   {
    "link_doctype": "Donation",
-   "link_fieldname": "donor_id"
+   "link_fieldname": "donor_id_donation"
   },
   {
    "link_doctype": "Utilisation",
@@ -212,7 +219,7 @@
    "link_fieldname": "donor_id"
   }
  ],
- "modified": "2024-06-27 17:19:52.064341",
+ "modified": "2024-06-28 12:11:30.090578",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",

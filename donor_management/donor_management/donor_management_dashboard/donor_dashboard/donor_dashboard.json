@@ -15,6 +15,10 @@
   {
    "chart": "Donor Wise Projects",
    "width": "Half"
+  },
+  {
+   "chart": "Stage wise Funder Count",
+   "width": "Half"
   }
  ],
  "creation": "2024-04-08 12:40:48.722557",
@@ -24,7 +28,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-05-28 13:04:53.717755",
+ "modified": "2024-06-28 10:56:29.584725",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor Dashboard",

@@ -9,12 +9,11 @@
   "donor_details_section",
   "naming_series",
   "donor_id_donation",
-  "donor_name",
   "funder_type",
-  "organisation",
   "funder_program",
-  "column_break_arme",
   "designation",
+  "column_break_arme",
+  "organisation",
   "email",
   "engagement_start_date",
   "engagement_end_date",
@@ -70,7 +69,7 @@
    "label": "Designation"
   },
   {
-   "fetch_from": "donor_id.email",
+   "fetch_from": "donor_id_donation.email",
    "fieldname": "email",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -162,13 +161,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "donor_id.donor_name",
-   "fieldname": "donor_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Donor Name"
-  },
-  {
    "fieldname": "engagement_start_date",
    "fieldtype": "Date",
    "label": "Engagement Start date"
@@ -231,7 +223,7 @@
    "options": "Funder Program"
   },
   {
-   "fetch_from": "donor_id_donation.donor_type",
+   "fetch_from": "donor_id_donation.funder_type",
    "fieldname": "funder_type",
    "fieldtype": "Link",
    "label": "Funder Type",
@@ -242,7 +234,7 @@
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-27 14:33:59.809070",
+ "modified": "2024-06-28 12:41:07.212875",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation",
@@ -270,5 +262,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "donor_name"
+ "title_field": "organisation"
 }

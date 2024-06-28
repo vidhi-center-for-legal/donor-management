@@ -32,14 +32,23 @@ frappe.ui.form.on('Funder', {
     refresh: function(frm) {
         if (!frm.doc.__islocal && !frm.doc.donor) {
             frm.add_custom_button(__('Convert to committed funder'), function() {
-                if(frm.doc.funder_status=="Pipeline" || frm.doc.funder_status=="Committed")
-                    {
-                        frappe.msgprint(__('Funder sould be in expected status for converting it as Donor!'));
-                        
-                    }
-                    else{
-                        convertToDonor(frm);
-                    }
+                
+                if(frm.doc.email!=null){
+                    if(frm.doc.funder_status=="Pipeline" || frm.doc.funder_status=="Committed")
+                        {
+                            frappe.msgprint(__('Funder sould be in expected status for converting it as Donor!'));
+                            
+                        }
+                        else{
+                            frm.save();
+
+                            convertToDonor(frm);
+                        }
+                }
+                else{
+                    frappe.msgprint(__('Please add Funder email to convert to committed stage.'));
+                }
+                
                
             }).addClass('btn-primary');
         }

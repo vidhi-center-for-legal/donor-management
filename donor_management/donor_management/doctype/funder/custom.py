@@ -44,6 +44,7 @@ def create_new_donor(funder_details):
 
 def update_donor_details(donor, funder_details):
     donor.organisation_name = funder_details.organisation_name
+    donor.email = funder_details.email
     donor.website=funder_details.website
     donor.phone = funder_details.phone
     donor.preferred_communication = funder_details.preferred_communication

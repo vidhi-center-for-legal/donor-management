@@ -15,6 +15,7 @@
   "remarks",
   "column_break_uhko",
   "website",
+  "email",
   "funder_poc",
   "preferred_communication",
   "potential_funder",
@@ -34,7 +35,8 @@
   "attachment_section_section",
   "presentation_details",
   "to_do_section",
-  "to_do"
+  "to_do",
+  "amended_from"
  ],
  "fields": [
   {
@@ -205,6 +207,22 @@
    "label": "Date of Creation ",
    "read_only": 1,
    "set_only_once": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Funder",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -214,7 +232,7 @@
    "link_fieldname": "funder_id_meet"
   }
  ],
- "modified": "2024-06-27 13:38:55.996906",
+ "modified": "2024-06-28 13:10:00.348464",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Funder",

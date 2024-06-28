@@ -1,4 +1,4 @@
-frappe.query_reports["Overall Donation Expected Report"] = {
+frappe.query_reports["Overall Donation Expected"] = {
     "filters": [
 
         {
