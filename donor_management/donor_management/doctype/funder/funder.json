@@ -12,6 +12,7 @@
   "funder_status",
   "date_of_creation",
   "assigned_poc_from_vidhi_centre",
+  "financial_year",
   "remarks",
   "column_break_uhko",
   "website",
@@ -20,13 +21,12 @@
   "preferred_communication",
   "potential_funder",
   "reason_for_pf",
+  "funder_type",
   "department",
   "funder_program",
   "section_break_hwqt",
   "amount",
-  "funder_type",
   "column_break_wrzw",
-  "financial_year",
   "status",
   "section_break_jpvr",
   "start_date",
@@ -164,7 +164,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Financial Year",
-   "options": "Financial Year"
+   "options": "Financial Year",
+   "reqd": 1
   },
   {
    "default": "Untied",
@@ -232,7 +233,7 @@
    "link_fieldname": "funder_id_meet"
   }
  ],
- "modified": "2024-06-28 13:10:00.348464",
+ "modified": "2024-06-28 15:59:50.297522",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Funder",

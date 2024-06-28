@@ -12,6 +12,7 @@
   "funder_type",
   "funder_program",
   "designation",
+  "financial_year",
   "column_break_arme",
   "organisation",
   "email",
@@ -228,13 +229,20 @@
    "fieldtype": "Link",
    "label": "Funder Type",
    "options": "Funder Type"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-28 12:41:07.212875",
+ "modified": "2024-06-28 16:33:10.724630",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation",

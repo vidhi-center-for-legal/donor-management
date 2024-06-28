@@ -5,7 +5,7 @@ function convertToDonor(frm) {
         () => { 
             frappe.call({
                 method: "donor_management.donor_management.doctype.funder.custom.create_or_update_donor",
-                //@Todo: update the api end point
+                
                 args: {
                     funder_status: frm.doc.funder_status,
                     naming_series: frm.doc.name,
@@ -30,11 +30,11 @@ function convertToDonor(frm) {
 
 frappe.ui.form.on('Funder', {
     refresh: function(frm) {
-        if (!frm.doc.__islocal && !frm.doc.donor) {
+        if (!frm.doc.__islocal && !frm.doc.donor && frm.doc.funder_status!="Committed") {
             frm.add_custom_button(__('Convert to committed funder'), function() {
                 
                 if(frm.doc.email!=null){
-                    if(frm.doc.funder_status=="Pipeline" || frm.doc.funder_status=="Committed")
+                    if(frm.doc.funder_status=="Pipeline")
                         {
                             frappe.msgprint(__('Funder sould be in expected status for converting it as Donor!'));
                             

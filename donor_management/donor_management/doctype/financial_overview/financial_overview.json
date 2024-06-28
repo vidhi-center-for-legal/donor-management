@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:budget_year",
+ "creation": "2024-06-28 13:19:53.122057",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "budget_year",
+  "section_break_bxic",
+  "column_break_bnzp",
+  "budget_amount",
+  "aspirational_budget",
+  "column_break_gjok",
+  "fr_targets",
+  "total_fr_budget",
+  "section_break_vbna",
+  "total_funds_received",
+  "column_break_dagc",
+  "funds_committed_and_expected",
+  "section_break_ijpz",
+  "mou_billing_expected",
+  "interest_income",
+  "column_break_wpoy",
+  "mou_billing_raised",
+  "expected_income",
+  "section_break_uedu",
+  "fr__gap",
+  "column_break_vluw",
+  "budget_gap"
+ ],
+ "fields": [
+  {
+   "fieldname": "aspirational_budget",
+   "fieldtype": "Currency",
+   "label": "Aspirational Budget",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bnzp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "budget_amount",
+   "fieldtype": "Currency",
+   "label": "Budget Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gjok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fr_targets",
+   "fieldtype": "Currency",
+   "label": "FR Targets",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fr_budget",
+   "fieldtype": "Currency",
+   "label": "Total FR Budget",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_vbna",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_funds_received",
+   "fieldtype": "Currency",
+   "label": "Total Funds Received",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dagc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "funds_committed_and_expected",
+   "fieldtype": "Currency",
+   "label": "Funds Committed &#43; Expected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ijpz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mou_billing_expected",
+   "fieldtype": "Currency",
+   "label": "MoU Billing Expected"
+  },
+  {
+   "fieldname": "interest_income",
+   "fieldtype": "Currency",
+   "label": "Interest Income"
+  },
+  {
+   "fieldname": "column_break_wpoy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mou_billing_raised",
+   "fieldtype": "Currency",
+   "label": "MoU Billing Raised"
+  },
+  {
+   "fieldname": "expected_income",
+   "fieldtype": "Currency",
+   "label": "Expected Income",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_uedu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "fr__gap",
+   "fieldtype": "Currency",
+   "label": "FR  Gap",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vluw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "budget_gap",
+   "fieldtype": "Currency",
+   "label": "Budget Gap",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bxic",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "budget_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Budget Year",
+   "options": "Financial Year",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-28 18:02:13.158634",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Financial Overview",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

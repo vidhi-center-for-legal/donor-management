@@ -1,5 +1,18 @@
 {
- "cards": [],
+ "cards": [
+  {
+   "card": "Overall Donation Expected"
+  },
+  {
+   "card": "Overall Donation Received"
+  },
+  {
+   "card": "Total Number of Tranches Recieved"
+  },
+  {
+   "card": "Total Donation Value Available to Utilise"
+  }
+ ],
  "charts": [
   {
    "chart": "Stage wise Funder Count",
@@ -21,7 +34,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-06-28 11:50:21.592086",
+ "modified": "2024-06-28 15:26:04.662199",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Funder and Donation Dashboard",
