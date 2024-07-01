@@ -33,6 +33,7 @@
   {
    "fieldname": "aspirational_budget",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Aspirational Budget",
    "reqd": 1
   },
@@ -43,6 +44,7 @@
   {
    "fieldname": "budget_amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Budget Amount",
    "reqd": 1
   },
@@ -53,12 +55,14 @@
   {
    "fieldname": "fr_targets",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "FR Targets",
    "read_only": 1
   },
   {
    "fieldname": "total_fr_budget",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Total FR Budget",
    "read_only": 1
   },
@@ -69,6 +73,7 @@
   {
    "fieldname": "total_funds_received",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Total Funds Received",
    "read_only": 1
   },
@@ -79,6 +84,7 @@
   {
    "fieldname": "funds_committed_and_expected",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Funds Committed &#43; Expected",
    "read_only": 1
   },
@@ -89,11 +95,13 @@
   {
    "fieldname": "mou_billing_expected",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "MoU Billing Expected"
   },
   {
    "fieldname": "interest_income",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Interest Income"
   },
   {
@@ -103,11 +111,13 @@
   {
    "fieldname": "mou_billing_raised",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "MoU Billing Raised"
   },
   {
    "fieldname": "expected_income",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Expected Income",
    "read_only": 1
   },
@@ -118,6 +128,7 @@
   {
    "fieldname": "fr__gap",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "FR  Gap",
    "read_only": 1
   },
@@ -128,6 +139,7 @@
   {
    "fieldname": "budget_gap",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Budget Gap",
    "read_only": 1
   },
@@ -147,7 +159,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-28 18:02:13.158634",
+ "modified": "2024-07-01 14:11:07.246644",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Financial Overview",

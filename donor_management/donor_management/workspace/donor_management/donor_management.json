@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"nAUGKLMVL2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Donor Management</span>\",\"col\":12}},{\"id\":\"g_bvrpemvq\",\"type\":\"card\",\"data\":{\"card_name\":\"Funder Details\",\"col\":4}},{\"id\":\"y9Z6RqpCZx\",\"type\":\"card\",\"data\":{\"card_name\":\"Donor and Project Details\",\"col\":4}},{\"id\":\"NaxtPTkVQq\",\"type\":\"card\",\"data\":{\"card_name\":\"Donation Details\",\"col\":4}},{\"id\":\"EXY1nJWdtO\",\"type\":\"card\",\"data\":{\"card_name\":\"Utilisation Details\",\"col\":4}},{\"id\":\"wXdHRi7QeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Email Campaign\",\"col\":4}},{\"id\":\"qsQUcHX50h\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":4}},{\"id\":\"Q-A8k6eJIk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Data Insights</b></span>\",\"col\":12}},{\"id\":\"1FYVr7z5jW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Funder and Donation Dashboard\",\"col\":4}},{\"id\":\"fS8d6OXNK9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donor Dashboard\",\"col\":4}},{\"id\":\"nLoJlyf6YP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Dashboard\",\"col\":3}},{\"id\":\"wb-t1SOMML\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"P9bX_eQ80i\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Report\",\"col\":5}},{\"id\":\"16zCf4bsAg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Report\",\"col\":5}},{\"id\":\"bC7Wi0DX89\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overall Donation Expected Report\",\"col\":5}},{\"id\":\"v9Ej892-Iu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overall Donation Received Report\",\"col\":5}}]",
+ "content": "[{\"id\":\"nAUGKLMVL2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Donor Management</span>\",\"col\":12}},{\"id\":\"g_bvrpemvq\",\"type\":\"card\",\"data\":{\"card_name\":\"Funder Details\",\"col\":4}},{\"id\":\"y9Z6RqpCZx\",\"type\":\"card\",\"data\":{\"card_name\":\"Donor and Project Details\",\"col\":4}},{\"id\":\"NaxtPTkVQq\",\"type\":\"card\",\"data\":{\"card_name\":\"Donation Details\",\"col\":4}},{\"id\":\"EXY1nJWdtO\",\"type\":\"card\",\"data\":{\"card_name\":\"Utilisation Details\",\"col\":4}},{\"id\":\"qsQUcHX50h\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Overview\",\"col\":4}},{\"id\":\"wXdHRi7QeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Email Campaign\",\"col\":4}},{\"id\":\"Q-A8k6eJIk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Data Insights</b></span>\",\"col\":12}},{\"id\":\"1FYVr7z5jW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Funder and Donation Dashboard\",\"col\":4}},{\"id\":\"fS8d6OXNK9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donor Dashboard\",\"col\":4}},{\"id\":\"nLoJlyf6YP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Dashboard\",\"col\":3}},{\"id\":\"wb-t1SOMML\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"P9bX_eQ80i\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilisation Report\",\"col\":4}},{\"id\":\"16zCf4bsAg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Report\",\"col\":4}},{\"id\":\"kUQytlFjlB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Financial Overview Report\",\"col\":3}},{\"id\":\"bC7Wi0DX89\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overall Donation Expected Report\",\"col\":4}},{\"id\":\"v9Ej892-Iu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overall Donation Received Report\",\"col\":4}}]",
  "creation": "2024-02-19 15:51:49.184106",
  "custom_blocks": [],
  "docstatus": 0,
@@ -150,8 +150,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Report",
-   "link_count": 4,
+   "label": "Financial Overview",
+   "link_count": 1,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -159,45 +159,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Utilisation Report",
+   "label": "Financial Overview",
    "link_count": 0,
-   "link_to": "Utilisation Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Donation Report",
-   "link_count": 0,
-   "link_to": "Donation Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Overall Donation Received Report",
-   "link_count": 0,
-   "link_to": "Overall Donation Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Overall Donation Expected Report ",
-   "link_count": 0,
-   "link_to": "Overall Donation Expected",
-   "link_type": "Report",
+   "link_to": "Financial Overview",
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2024-06-28 15:53:55.973415",
+ "modified": "2024-07-01 11:53:31.971907",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor Management",
@@ -221,6 +191,13 @@
    "doc_view": "List",
    "label": "Utilisation Report",
    "link_to": "Utilisation Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Financial Overview Report",
+   "link_to": "Financial Overview Report",
    "type": "Report"
   },
   {
