@@ -10,7 +10,7 @@
   "donor_id",
   "donor_name",
   "donor_email",
-  "donor_type",
+  "funder_type",
   "column_break_xgsj",
   "total_donation",
   "total_utilisation",
@@ -31,22 +31,16 @@
    "label": "Donation Details"
   },
   {
-   "fetch_from": "donor_id.donor_type",
-   "fieldname": "donor_type",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Donor Type"
-  },
-  {
    "fieldname": "total_donation",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total Donation"
   },
   {
+   "fetch_from": "donor_id.organisation_name",
    "fieldname": "donor_name",
    "fieldtype": "Data",
-   "label": "Donor Name"
+   "label": "Organisation Name"
   },
   {
    "fieldname": "column_break_xgsj",
@@ -73,11 +67,19 @@
    "label": "Donor Email",
    "options": "Email",
    "unique": 1
+  },
+  {
+   "fetch_from": "donor_id.funder_type",
+   "fieldname": "funder_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Funder Type",
+   "options": "Funder Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-08 16:05:41.631387",
+ "modified": "2024-06-28 12:30:58.706229",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Overall Donation",

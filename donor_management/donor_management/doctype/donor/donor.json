@@ -8,26 +8,34 @@
  "engine": "InnoDB",
  "field_order": [
   "donor_details_section",
-  "naming_series",
-  "donor_name",
-  "gender",
-  "dob",
   "organisation_name",
-  "address",
+  "naming_series",
+  "dob",
+  "assigned_poc_from_vidhi_centre",
+  "tax_identification_number",
+  "funder_program",
+  "pan_card",
+  "departments",
   "column_break_uhko",
+  "website",
+  "preferred_communication",
   "email",
   "phone",
   "alternative_number",
-  "designation",
-  "preferred_communication_method",
-  "donor_type",
-  "tax_identification_number",
-  "pan_card",
   "aadhar_number",
-  "presentation_given",
-  "departments",
+  "remarks",
+  "expected_stage_details_section",
+  "amount",
+  "funder_type",
+  "start_date",
+  "column_break_chae",
+  "financial_year",
+  "status",
+  "end_date",
   "presentation_details_section",
-  "presentation_details"
+  "presentation_details",
+  "to_do_section",
+  "table_tzlv"
  ],
  "fields": [
   {
@@ -36,38 +44,15 @@
    "label": "Donor Details"
   },
   {
-   "fieldname": "donor_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Donor Name"
-  },
-  {
-   "fieldname": "gender",
-   "fieldtype": "Select",
-   "label": "Gender",
-   "options": "\nMale\nFemale\nOther"
-  },
-  {
    "fieldname": "organisation_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Organisation Name"
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Text",
-   "label": "Address"
+   "label": "Organisation Name",
+   "search_index": 1
   },
   {
    "fieldname": "column_break_uhko",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email ",
-   "options": "Email",
-   "reqd": 1
   },
   {
    "fieldname": "phone",
@@ -82,35 +67,10 @@
    "options": "Phone"
   },
   {
-   "fieldname": "designation",
-   "fieldtype": "Data",
-   "label": "Designation"
-  },
-  {
-   "fieldname": "preferred_communication_method",
-   "fieldtype": "Select",
-   "label": " Preferred Communication Method",
-   "options": "\nEmail\nPhone\nIn Person\nNone"
-  },
-  {
-   "fieldname": "donor_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Donor Type",
-   "options": "Donor Type"
-  },
-  {
    "depends_on": "eval: doc.donor_type == \"Foriegn Donor\"",
    "fieldname": "tax_identification_number",
    "fieldtype": "Data",
    "label": "Tax Identification Number"
-  },
-  {
-   "fieldname": "pan_card",
-   "fieldtype": "Data",
-   "label": "Pan Number",
-   "reqd": 1
   },
   {
    "fieldname": "aadhar_number",
@@ -118,13 +78,6 @@
    "label": "Aadhar Number"
   },
   {
-   "default": "0",
-   "fieldname": "presentation_given",
-   "fieldtype": "Check",
-   "label": "Presentation Given"
-  },
-  {
-   "depends_on": "eval: doc.presentation_given == true",
    "fieldname": "presentation_details_section",
    "fieldtype": "Section Break",
    "label": "Agreement and Compliances"
@@ -139,6 +92,7 @@
   {
    "fieldname": "departments",
    "fieldtype": "Table MultiSelect",
+   "hidden": 1,
    "in_filter": 1,
    "in_standard_filter": 1,
    "label": "Verticals",
@@ -154,13 +108,107 @@
    "fieldname": "dob",
    "fieldtype": "Date",
    "label": "Date of Birth"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "expected_stage_details_section",
+   "fieldtype": "Section Break",
+   "label": "Expected Stage Details"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "funder_type",
+   "fieldtype": "Link",
+   "label": "Funder Type",
+   "options": "Funder Type"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_chae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "label": "Financial Year",
+   "options": "Financial Year"
+  },
+  {
+   "default": "Untied",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Tied\nUntied"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "preferred_communication",
+   "fieldtype": "Link",
+   "label": " Preferred Communication",
+   "options": "Preferred Communication"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "funder_program",
+   "fieldtype": "Link",
+   "label": "Funder Program",
+   "options": "Funder Program"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Data",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "to_do_section",
+   "fieldtype": "Section Break",
+   "label": "To Do"
+  },
+  {
+   "fieldname": "table_tzlv",
+   "fieldtype": "Table",
+   "options": "To Do Items"
+  },
+  {
+   "fieldname": "assigned_poc_from_vidhi_centre",
+   "fieldtype": "Link",
+   "label": "Assigned POC from Vidhi Centre",
+   "options": "Vidhi Centre POC"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [
   {
    "link_doctype": "Donation",
-   "link_fieldname": "donor_id"
+   "link_fieldname": "donor_id_donation"
   },
   {
    "link_doctype": "Utilisation",
@@ -169,13 +217,9 @@
   {
    "link_doctype": "Overall Donation",
    "link_fieldname": "donor_id"
-  },
-  {
-   "link_doctype": "Project Details",
-   "link_fieldname": "donor_name"
   }
  ],
- "modified": "2024-05-28 13:05:37.680755",
+ "modified": "2024-06-28 12:11:30.090578",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",
@@ -199,7 +243,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "donor_name",
+ "title_field": "organisation_name",
  "track_changes": 1,
  "translated_doctype": 1
 }

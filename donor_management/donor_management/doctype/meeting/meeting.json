@@ -1,0 +1,196 @@
+{
+ "actions": [],
+ "autoname": "format:{funder_id_meet} -{####}",
+ "creation": "2024-06-21 13:29:08.692485",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "funder_id_meet",
+  "title",
+  "status",
+  "page_name",
+  "parent_website_route",
+  "column_break_3",
+  "date",
+  "from_time",
+  "to_time",
+  "agenda_section",
+  "agenda",
+  "attendees_section",
+  "attendees",
+  "invitation",
+  "invitation_message",
+  "attachments_section",
+  "attachments",
+  "minutes_section",
+  "minutes_of_meeting",
+  "minutes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "not_nullable": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Planned\nInvitation Sent\nIn Progress\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "page_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Page Name",
+   "read_only": 1
+  },
+  {
+   "default": "meetings",
+   "fieldname": "parent_website_route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Parent Website Route",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "agenda",
+   "fieldname": "agenda_section",
+   "fieldtype": "Section Break",
+   "label": "Agenda"
+  },
+  {
+   "fieldname": "agenda",
+   "fieldtype": "Table",
+   "label": "Agenda",
+   "options": "Meeting Agenda"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "attendees",
+   "fieldname": "attendees_section",
+   "fieldtype": "Section Break",
+   "label": "Attendees"
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "label": "Attendees",
+   "options": "Meeting Attendee"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "invitation",
+   "fieldtype": "Section Break",
+   "label": "Invitation"
+  },
+  {
+   "fieldname": "invitation_message",
+   "fieldtype": "Text Editor",
+   "label": "Invitation Message"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "minutes",
+   "fieldname": "minutes_section",
+   "fieldtype": "Section Break",
+   "label": "Minutes of Meeting"
+  },
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Minutes",
+   "options": "Meeting Minute"
+  },
+  {
+   "fetch_from": "amended_from.funder_id_meet",
+   "fieldname": "funder_id_meet",
+   "fieldtype": "Link",
+   "label": "Funder ID",
+   "options": "Funder",
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Meeting",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table",
+   "label": "Attachments",
+   "options": "Attachments"
+  },
+  {
+   "fieldname": "minutes_of_meeting",
+   "fieldtype": "Text Editor",
+   "label": "Minutes of Meeting"
+  }
+ ],
+ "links": [],
+ "modified": "2024-06-27 10:56:50.045648",
+ "modified_by": "Administrator",
+ "module": "Donor Management",
+ "name": "Meeting",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

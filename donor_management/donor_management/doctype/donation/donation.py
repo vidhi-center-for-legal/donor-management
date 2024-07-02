@@ -28,7 +28,8 @@ def exchange_rate(preferred_currency, amount_in_preferred_currency, date_of_dona
 def add_donation_to_overall_donation(doc):
     try:
         donation_details = frappe.get_doc(doc)
-        donor_id = donation_details.get("donor_id")
+        print(donation_details.donor_id_donation)
+        donor_id = donation_details.get("donor_id_donation")
         donor_email = donation_details.get("email")
         overall_donation_document = frappe.get_all('Overall Donation', filters={'donor_id': donor_id, 'donor_email': donor_email }, limit=1)
         if not overall_donation_document:
@@ -43,7 +44,7 @@ def add_donation_to_overall_donation(doc):
 def add_new_overall_donation(doc):
     try:
         new_overall_donation_document = frappe.new_doc("Overall Donation")
-        new_overall_donation_document.donor_id = doc.get("donor_id")
+        new_overall_donation_document.donor_id = doc.get("donor_id_donation")
         new_overall_donation_document.donor_email = doc.get("email")
         new_overall_donation_document.donor_name = doc.get("donor_name")
         new_overall_donation_document.total_donation= doc.get("tranche_amount")
@@ -56,7 +57,7 @@ def add_new_overall_donation(doc):
 
 def update_overall_donation(doc):
     try:
-        overall_donation_document = frappe.get_doc("Overall Donation", {"donor_id": doc.get("donor_id")})
+        overall_donation_document = frappe.get_doc("Overall Donation", {"donor_id": doc.get("donor_id_donation")})
         overall_donation_document.total_donation += doc.get("tranche_amount")
         overall_donation_document.available_donation_amount += doc.get("tranche_amount")
         overall_donation_document.latest_donation_date = doc.get("date_of_donation")
