@@ -2,7 +2,7 @@ import frappe
 from frappe import _
 
 @frappe.whitelist()
-def create_or_update_donor(funder_status,naming_series):
+def create_or_update_donor(funder_status,naming_series,org_name,email):
     if (funder_status == "Committed"):
         frappe.throw(_('Funder is already in committed stage'))
     elif (funder_status!="Expected"):
@@ -10,19 +10,19 @@ def create_or_update_donor(funder_status,naming_series):
     try:
         funder_details = frappe.get_doc('Funder', naming_series)        
         #lead_name = lead_details.organisation_name
-        existing_donor = frappe.get_all('Donor', filters={'donor_name': naming_series,}, limit=1)
+        existing_donor = frappe.get_all('Donor', filters={'organisation_name': org_name,}, limit=1)
         if not existing_donor:
             return create_new_donor(funder_details)
         else:
-            return update_existing_donor(existing_donor[0], funder_details)
+            return update_existing_donor(existing_donor[0], funder_details,email)
     except Exception as e:
         frappe.logger().error(f'Error in create_or_update_donor: {str(e)}', exc_info=True)
         return {'status': 'error', 'message': _('Error: {0}').format(str(e))}
 
-def update_existing_donor(existing_donor, lead_details, email):
+def update_existing_donor(existing_donor, funder_details, email):
     try:
         donor = frappe.get_doc("Donor", existing_donor.name)
-        update_donor_details(donor, lead_details, email)
+        update_donor_details(donor, funder_details, email)
         donor.save(ignore_permissions = True)
         return True
     except Exception as e:
@@ -42,7 +42,7 @@ def create_new_donor(funder_details):
         return False
 
 
-def update_donor_details(donor, funder_details):
+def update_donor_details(donor, funder_details,email):
     donor.organisation_name = funder_details.organisation_name
     donor.email = funder_details.email
     donor.website=funder_details.website

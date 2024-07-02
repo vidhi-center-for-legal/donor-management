@@ -9,6 +9,8 @@ function convertToDonor(frm) {
                 args: {
                     funder_status: frm.doc.funder_status,
                     naming_series: frm.doc.name,
+                    org_name: frm.doc.organisation_name,
+                    email: frm.doc.email,
                 },
                 callback: function(r) {
                     if (r.message) { 
