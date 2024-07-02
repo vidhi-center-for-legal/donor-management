@@ -9,12 +9,13 @@ def create_or_update_donor(funder_status,naming_series,org_name,email):
         frappe.throw(_('Funder status should be Expected'))
     try:
         funder_details = frappe.get_doc('Funder', naming_series)        
-        #lead_name = lead_details.organisation_name
+       
         existing_donor = frappe.get_all('Donor', filters={'organisation_name': org_name,}, limit=1)
         if not existing_donor:
             return create_new_donor(funder_details)
         else:
             return update_existing_donor(existing_donor[0], funder_details,email)
+
     except Exception as e:
         frappe.logger().error(f'Error in create_or_update_donor: {str(e)}', exc_info=True)
         return {'status': 'error', 'message': _('Error: {0}').format(str(e))}
@@ -23,6 +24,7 @@ def update_existing_donor(existing_donor, funder_details, email):
     try:
         donor = frappe.get_doc("Donor", existing_donor.name)
         update_donor_details(donor, funder_details, email)
+
         donor.save(ignore_permissions = True)
         return True
     except Exception as e:
