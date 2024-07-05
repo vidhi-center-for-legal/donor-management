@@ -63,7 +63,7 @@ def update_donor_details(donor, funder_details):
     #     if department.department_name not in existing_departments:
     #         donor.append("departments", {"department_name": department.department_name})
     
-    existing_attachments = {(a.name1, a.date, a.agent_uploading, a.attachment) for a in donor.presentation_details}
+    existing_attachments = {(a.name1, a.date, a.attachment) for a in donor.presentation_details}
     
     for attachment in funder_details.get("presentation_details"):
         key = (attachment.name1, attachment.date, attachment.attachment)

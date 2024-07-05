@@ -15,7 +15,6 @@
   "tax_identification_number",
   "funder_program",
   "pan_card",
-  "departments",
   "column_break_uhko",
   "website",
   "preferred_communication",
@@ -88,15 +87,6 @@
    "label": "Donor ID",
    "options": "DONOR-.YYYY.-",
    "read_only": 1
-  },
-  {
-   "fieldname": "departments",
-   "fieldtype": "Table MultiSelect",
-   "hidden": 1,
-   "in_filter": 1,
-   "in_standard_filter": 1,
-   "label": "Verticals",
-   "options": "Departments"
   },
   {
    "fieldname": "presentation_details",
@@ -219,7 +209,7 @@
    "link_fieldname": "donor_id"
   }
  ],
- "modified": "2024-07-05 15:42:01.794915",
+ "modified": "2024-07-05 15:57:11.556025",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor",

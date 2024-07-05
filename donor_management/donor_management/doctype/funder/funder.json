@@ -22,7 +22,6 @@
   "potential_funder",
   "reason_for_pf",
   "funder_type",
-  "department",
   "funder_program",
   "section_break_hwqt",
   "amount",
@@ -67,13 +66,6 @@
    "fieldname": "reason_for_pf",
    "fieldtype": "Data",
    "label": "Reason for Potential Funder"
-  },
-  {
-   "fieldname": "department",
-   "fieldtype": "Table MultiSelect",
-   "hidden": 1,
-   "label": "Verticals",
-   "options": "Departments"
   },
   {
    "fieldname": "attachment_section_section",
@@ -233,7 +225,7 @@
    "link_fieldname": "funder_id_meet"
   }
  ],
- "modified": "2024-06-28 15:59:50.297522",
+ "modified": "2024-07-05 15:58:58.889874",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Funder",
