@@ -9,14 +9,6 @@
  ],
  "charts": [
   {
-   "chart": "Count of Donors based on Donor type",
-   "width": "Half"
-  },
-  {
-   "chart": "Donor Wise Projects",
-   "width": "Half"
-  },
-  {
    "chart": "Stage wise Funder Count",
    "width": "Half"
   }
@@ -28,7 +20,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-06-28 10:56:29.584725",
+ "modified": "2024-07-05 15:32:17.339647",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donor Dashboard",
