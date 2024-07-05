@@ -2,7 +2,7 @@ import frappe
 from frappe import _
 
 @frappe.whitelist()
-def create_or_update_donor(funder_status,naming_series,org_name,email):
+def create_or_update_donor(funder_status,naming_series,org_name):
     if (funder_status == "Committed"):
         frappe.throw(_('Funder is already in committed stage'))
     elif (funder_status!="Expected"):
@@ -14,15 +14,15 @@ def create_or_update_donor(funder_status,naming_series,org_name,email):
         if not existing_donor:
             return create_new_donor(funder_details)
         else:
-            return update_existing_donor(existing_donor[0], funder_details,email)
+            return update_existing_donor(existing_donor[0], funder_details)
     except Exception as e:
         frappe.logger().error(f'Error in create_or_update_donor: {str(e)}', exc_info=True)
         return {'status': 'error', 'message': _('Error: {0}').format(str(e))}
 
-def update_existing_donor(existing_donor, funder_details, email):
+def update_existing_donor(existing_donor, funder_details):
     try:
         donor = frappe.get_doc("Donor", existing_donor.name)
-        update_donor_details(donor, funder_details, email)
+        update_donor_details(donor, funder_details)
         donor.save(ignore_permissions = True)
         return True
     except Exception as e:
@@ -42,11 +42,10 @@ def create_new_donor(funder_details):
         return False
 
 
-def update_donor_details(donor, funder_details,email):
+def update_donor_details(donor, funder_details):
     donor.organisation_name = funder_details.organisation_name
     donor.email = funder_details.email
     donor.website=funder_details.website
-    donor.phone = funder_details.phone
     donor.preferred_communication = funder_details.preferred_communication
     donor.assigned_poc_from_vidhi_centre = funder_details.assigned_poc_from_vidhi_centre
     donor.funder_program = funder_details.funder_program
@@ -57,12 +56,12 @@ def update_donor_details(donor, funder_details,email):
     donor.start_date = funder_details.start_date
     donor.end_date = funder_details.end_date
     donor.presentation_given = True
-    existing_departments = {d.department_name for d in donor.departments}
+    # existing_departments = {d.department_name for d in donor.departments}
     
 
-    for department in funder_details.department:
-        if department.department_name not in existing_departments:
-            donor.append("departments", {"department_name": department.department_name})
+    # for department in funder_details.department:
+    #     if department.department_name not in existing_departments:
+    #         donor.append("departments", {"department_name": department.department_name})
     
     existing_attachments = {(a.name1, a.date, a.agent_uploading, a.attachment) for a in donor.presentation_details}
     
