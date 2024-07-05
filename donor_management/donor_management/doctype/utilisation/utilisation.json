@@ -9,7 +9,6 @@
   "section_break_odke",
   "donor_id",
   "donor_name",
-  "project",
   "donation_amount",
   "left_over_donation",
   "utilisation_amount",
@@ -18,7 +17,6 @@
   "utilisation_document",
   "utilisation_type",
   "progress_report",
-  "departments",
   "approval_section",
   "date_of_utilisation",
   "utilisation_status",
@@ -143,27 +141,13 @@
    "fieldname": "progress_report",
    "fieldtype": "Data",
    "label": "Progress Report"
-  },
-  {
-   "fieldname": "departments",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Vertical",
-   "options": "Department Name"
-  },
-  {
-   "fieldname": "project",
-   "fieldtype": "Link",
-   "label": "Project",
-   "options": "Project Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-27 14:19:44.069271",
+ "modified": "2024-07-05 16:06:17.602226",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Utilisation",
