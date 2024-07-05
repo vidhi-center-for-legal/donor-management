@@ -1,4 +1,4 @@
-frappe.ui.form.on("Donation", {
+/*frappe.ui.form.on("Donation", {
     amount_in_preferred_currency: function(frm) {
         var preferred_currency = frm.doc.preferred_currency;
         var amount_in_preferred_currency = frm.doc.amount_in_preferred_currency;
@@ -31,4 +31,4 @@ frappe.ui.form.on("Donation", {
             }
         });
     },
-});
+});*/

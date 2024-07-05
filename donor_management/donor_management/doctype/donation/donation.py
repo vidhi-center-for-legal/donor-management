@@ -1,6 +1,6 @@
 import frappe
 from frappe.model.document import Document
-from erpnext.setup.utils import get_exchange_rate
+#from erpnext.setup.utils import get_exchange_rate
 
 class Donation(Document):
     def on_submit(self):
@@ -12,7 +12,7 @@ def left_over_donation_amount(doc):
     frappe.db.set_value("Donation", doc.name, "left_over_donation", donation_amount)
 
 
-@frappe.whitelist()
+'''@frappe.whitelist()
 def exchange_rate(preferred_currency, amount_in_preferred_currency, date_of_donation):
     try:
         amount = float(amount_in_preferred_currency)
@@ -22,7 +22,7 @@ def exchange_rate(preferred_currency, amount_in_preferred_currency, date_of_dona
 
     except Exception as e:
         frappe.logger().error(f"Error in exchange_rate: {str(e)}", exc_info=True)
-        return {"status": "error", "message": f"Error: {str(e)}"}
+        return {"status": "error", "message": f"Error: {str(e)}"}'''
     
 @frappe.whitelist()
 def add_donation_to_overall_donation(doc):
