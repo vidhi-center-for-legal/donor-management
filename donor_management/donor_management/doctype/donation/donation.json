@@ -40,10 +40,10 @@
    "label": "Donor Details"
   },
   {
+   "fetch_from": "donor_id_donation.organisation_name",
    "fieldname": "organisation",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Organisation Name",
-   "options": "Donor",
    "search_index": 1
   },
   {
@@ -199,7 +199,7 @@
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-05 15:59:37.564284",
+ "modified": "2024-07-05 16:21:02.537362",
  "modified_by": "Administrator",
  "module": "Donor Management",
  "name": "Donation",

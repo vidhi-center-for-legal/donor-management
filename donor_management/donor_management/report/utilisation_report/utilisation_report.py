@@ -10,7 +10,6 @@ def get_columns():
     return [
         {"label": _("Donor ID"), "fieldname": "donor_id", "fieldtype": "Link", "options": "Donor", "width": 180},
         {"label": _("Donor Name"), "fieldname": "donor_name", "fieldtype": "Data", "width": 180},
-        {"label": _("Project"), "fieldname": "project", "fieldtype": "Link", "options": "Project Details", "width": 180},
         {"label": _("Utilisation Amount"), "fieldname": "utilisation_amount", "fieldtype": "Currency", "width": 180},
         {"label": _("Utilisation Date"), "fieldname": "utilisation_date", "fieldtype": "Date", "width": 130},
         {"label": _("Utilisation Type"), "fieldname": "utilisation_type", "fieldtype": "Data", "width": 180},
@@ -34,14 +33,11 @@ def get_data(filters):
     if utilisation_type:
         utilisation_filters["utilisation_type"] = utilisation_type
     
-    project = filters.get("project")
-    if project:
-        utilisation_filters["project"] = project
 
     utilisations = frappe.get_all(
         "Utilisation",
         filters=utilisation_filters,
-        fields=["name","donor_id", "date_of_utilisation", "donor_name", "project", "utilisation_amount", "approved_date", "utilisation_type"]
+        fields=["name","donor_id", "date_of_utilisation", "donor_name", "utilisation_amount", "approved_date", "utilisation_type"]
     )
 
     data = []
@@ -53,7 +49,6 @@ def get_data(filters):
             "utilisation_date": utilisation.date_of_utilisation,
             "utilisation_type": utilisation.utilisation_type,
             "approved_date": utilisation.approved_date,
-            "project":utilisation.project
         })
 
     return data

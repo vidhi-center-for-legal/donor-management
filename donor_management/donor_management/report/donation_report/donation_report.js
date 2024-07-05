@@ -21,13 +21,6 @@ frappe.query_reports["Donation Report"] = {
 			label: __("To Date"),
 			fieldtype: "Date",
 			default: frappe.defaults.get_global_default("year_end_date")
-		},
-		{
-			fieldname:"project_details",
-			label:__("Projects"),
-			fieldtype:"Link",
-			options:"Project Details",
-			default:""
 		}
 
 	]
